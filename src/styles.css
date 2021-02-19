@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --ebony-clay: #222830;
+    --edward: #B0B5B5;
+    --tacao: #EC8D8B;
+    --ecstasy: #F4841A;
+    --sherpa-blue: #004C56;
+
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
