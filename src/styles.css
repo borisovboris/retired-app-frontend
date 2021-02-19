@@ -4,8 +4,16 @@
     --tacao: #EC8D8B;
     --ecstasy: #F4841A;
     --sherpa-blue: #004C56;
+    --light-gray: #d2d2d2;
+
+    font-family: 'Open Sans', sans-serif;
 
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
 }

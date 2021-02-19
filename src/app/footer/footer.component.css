@@ -1,0 +1,11 @@
+footer {
+    text-align: center;
+    background-color: var(--ebony-clay);
+    color: var(--light-gray);
+    padding: 3rem 1.5rem;
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
