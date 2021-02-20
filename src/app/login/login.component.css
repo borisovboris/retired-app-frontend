@@ -1,0 +1,44 @@
+nav {
+    background-color: var(--edward);
+    padding: 1.5rem 2rem;
+    overflow: auto;
+}
+
+#exam-results {
+    background-color: var(--tacao);
+    float: right;
+    border-radius: 4px;
+    padding: 15px 10px;
+}
+
+#enter-exam {
+    background-color: var(--ecstasy);
+    color: var(--sherpa-blue);
+    padding: 15px 10px;
+    border-radius: 4px;
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 15%;
+}
+
+#teacher-login {
+    background-color: var(--ecstasy);
+    color: var(--sherpa-blue);
+    padding: 15px 10px;
+    border-radius: 4px;
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 15%;
+}
+
+
+main {
+    position: relative;
+    height: 500px;
+}
+
+
