@@ -17,10 +17,8 @@ nav {
     padding: 15px 10px;
     border-radius: 4px;
     display: inline-block;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 15%;
+    margin: 10px 0;
+
 }
 
 #teacher-login {
@@ -29,16 +27,11 @@ nav {
     padding: 15px 10px;
     border-radius: 4px;
     display: inline-block;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 15%;
+    margin: 10px 0;
 }
 
-
 main {
-    position: relative;
-    height: 500px;
+    text-align: center;
 }
 
 
