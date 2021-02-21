@@ -1,0 +1,13 @@
+#modal-wrapper {
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-color: rgba(1, 1, 1, 0.7);
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+}
+
+#modal-template {
+
+}

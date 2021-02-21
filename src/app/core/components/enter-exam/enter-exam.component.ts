@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ModalService } from '../../services/modal.service';
 
 @Component({
-  selector: 'app-teacher-login',
-  templateUrl: './teacher-login.component.html',
-  styleUrls: ['./teacher-login.component.css']
+  selector: 'app-enter-exam',
+  templateUrl: './enter-exam.component.html',
+  styleUrls: ['./enter-exam.component.css']
 })
-export class TeacherLoginComponent implements OnInit {
+export class EnterExamComponent implements OnInit {
 
   constructor(private modalService: ModalService) { }
 

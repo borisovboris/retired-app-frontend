@@ -49,6 +49,10 @@ export class AppComponent {
         const { TeacherLoginComponent } = await import('./core/components/teacher-login/teacher-login.component');
         this.componentToLoad = TeacherLoginComponent;
         break;
+      case (ModalNames.EnterExam):
+        const { EnterExamComponent } = await import('./core/components/enter-exam/enter-exam.component');
+        this.componentToLoad = EnterExamComponent;
+        break;
     }
 
     this.modalVcr?.createComponent(

@@ -18,4 +18,8 @@ export class LoginComponent implements OnInit {
     this.modalService.openModal(ModalNames.TeacherLogin);
   }
 
+  openEnterExamModal(): void {
+    this.modalService.openModal(ModalNames.EnterExam);
+  }
+
 }

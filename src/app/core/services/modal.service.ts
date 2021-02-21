@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { ModalAction } from '../enums/modal-actions-enum';
+import { ModalNames } from '../enums/modal-names-enum';
 
 @Injectable({
   providedIn: 'root'
@@ -12,12 +13,12 @@ export class ModalService {
 
   constructor() { }
 
-  openModal(componentName: string): void {
+  openModal(componentName: ModalNames): void {
     this.modalSource.next([ModalAction.Open, componentName]);
   }
 
-  closeModal(componentName: string): void {
-    this.modalSource.next([ModalAction.Close, componentName]);
+  closeModal(): void {
+    this.modalSource.next([ModalAction.Close]);
   }
   
 }
