@@ -15,3 +15,12 @@
     <p>Created at: 01-01-2021 8:31</p>
 </div>
 
+<h1>From server</h1>
+<div *ngFor="let subjectName of subjects$ | async">
+
+    <h3>
+        {{ subjectName }}
+    </h3>
+  
+</div>
+

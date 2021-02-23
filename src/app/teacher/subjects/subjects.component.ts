@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/internal/Observable';
+import { SubjectService } from '../subject.service';
 
 @Component({
   selector: 'app-subjects',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SubjectsComponent implements OnInit {
 
-  constructor() { }
+  subjects$: Observable<Array<string>> | undefined;
+
+  constructor(private subjectService: SubjectService) { }
 
   ngOnInit(): void {
+    this.subjects$ = this.subjectService.getAllSubjects();
   }
 
 }
