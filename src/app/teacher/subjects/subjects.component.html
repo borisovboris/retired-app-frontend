@@ -1,26 +1,19 @@
-<p>Log Out</p>
-<h1>Subjects</h1>
-<h3>Your Subjects</h3>
-<p>Add Subject</p>
+<nav>
+    <p id="log-out" class="hover">Log Out</p>
+    <h1 id="heading">Subjects</h1>
+</nav>
 
-<div>
-    <p>C# Basics</p>
-    <p>Students: 17</p>
-    <p>Created at: 25-02-2021 13:56</p>
-</div>
+<main>
 
-<div>
-    <p>C# Fundamentals</p>
-    <p>Students: 51</p>
-    <p>Created at: 01-01-2021 8:31</p>
-</div>
+    <h2 id="subheading">Your Subjects</h2>
+    <p id="add-subject" class="hover">Add Subject</p>
 
-<h1>From server</h1>
-<div *ngFor="let subjectName of subjects$ | async">
 
-    <h3>
-        {{ subjectName }}
-    </h3>
-  
-</div>
-
+    <div class="flex-container">
+        <div class="flex-item hover" *ngFor="let subjectName of subjects$ | async">
+            <h3>
+                {{ subjectName }}
+            </h3>
+        </div>
+    </div>
+</main>

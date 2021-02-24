@@ -16,4 +16,5 @@ export class SubjectService {
   getAllSubjects(): Observable<Array<string>> {
     return this.http.get<Array<string>>(this.baseUrl);
   }
+  
 }
