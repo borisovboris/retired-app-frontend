@@ -22,4 +22,8 @@ export class LoginComponent implements OnInit {
     this.modalService.openModal(ModalNames.EnterExam);
   }
 
+  openTeacherRegisterModal(): void {
+    this.modalService.openModal(ModalNames.TeacherRegister);
+  }
+
 }

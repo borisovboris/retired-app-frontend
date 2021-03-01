@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { FooterComponent } from './footer/footer.component';
+import { TeacherRegisterComponent } from './core/components/teacher-register/teacher-register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     PageNotFoundComponent,
-    FooterComponent
+    FooterComponent,
+    TeacherRegisterComponent
   ],
   imports: [
     BrowserModule,

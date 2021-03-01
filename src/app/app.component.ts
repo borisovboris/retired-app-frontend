@@ -53,6 +53,10 @@ export class AppComponent {
         const { EnterExamComponent } = await import('./core/components/enter-exam/enter-exam.component');
         this.componentToLoad = EnterExamComponent;
         break;
+      case(ModalNames.TeacherRegister):
+        const { TeacherRegisterComponent } = await import('./core/components/teacher-register/teacher-register.component');
+        this.componentToLoad = TeacherRegisterComponent;
+        break;
     }
 
     this.modalVcr?.createComponent(
@@ -63,6 +67,7 @@ export class AppComponent {
 
   removeModalComponent() {
     this.modalVcr?.clear();
+    this.componentToLoad = null;
   }
 
 }
