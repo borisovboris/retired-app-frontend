@@ -1,9 +1,16 @@
 <div class="wrapper">
-    <form>
-        <h1>Sign up</h1>
-        <input placeholder="Username"><br>
-        <input placeholder="Email"><br>
-        <input placeholder="Password"><br>
-        <input placeholder="Confirm password"><br>
-    </form>
+    <div class="content">
+        <form [formGroup]="registerForm" (ngSubmit)="submit()">
+            <h1>Sign up</h1>
+            <div id="inputs">
+                <input name="username" formControlName="username" type="text" placeholder="Username"><br>
+                <input name="email" formControlName="email" type="email" placeholder="Email"><br>
+                <input name="password" formControlName="password" type="password" placeholder="Password"><br>
+                <input name="repeatPassword" formControlName="repeatPassword" type="password" placeholder="Confirm password"><br>
+            </div>
+            <button id="sign-up" class="hover" type="submit" [disabled]="registerForm.invalid">Sign up</button>
+        </form>
+
+        <p id="sign-in">Already have an account? <span class="hover">Sign in.</span></p>
+    </div>
 </div>

@@ -6,23 +6,28 @@
     position: relative;
 }
 
-form {
-    background-color: whitesmoke;
+.content {
     margin: auto;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 30%;
-    text-align: center;
-    padding-top: 60px;
-    padding-bottom: 100px;
+}
+
+form {
+    background-color: whitesmoke;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    padding-left: 2rem;
+    padding-right: 3rem;
     border-radius: 2px;
+    overflow: hidden;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-form input {
-    width: 80%;
+#inputs * {
+    width: 100%;
     margin: 5px;
     padding: 7px 0;
     background-color: inherit;
@@ -31,5 +36,31 @@ form input {
 
 
 h1 {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+
+#sign-up {
+  margin-top: 2rem;
+  display: inline-block;
+  color: whitesmoke;
+  background-color: var(--sherpa-blue);
+  border-radius: 20px;
+  font-weight: bold;
+  padding: 0.5rem 0.8rem;
+}
+
+#sign-up:disabled {
+    cursor: not-allowed;
+}
+
+#sign-in {
+    text-align: center;
+    margin-top: 1rem;
+
+}
+
+span {
+    /* text-decoration: underline; */
+    color: var(--sherpa-blue);
 }
