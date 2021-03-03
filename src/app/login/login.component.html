@@ -1,11 +1,11 @@
 <nav>
     <p id="exam-results" class="hover">Exam results</p>
-    <p id="teacher-register" class="hover" (click)="openTeacherRegisterModal()">Teacher Register</p>
+    <p id="teacher-register" class="hover" routerLink = "/auth/teacher-register">Teacher Register</p>
 </nav>
 
 <main>  
-        <p id="teacher-login" class="hover" (click)="openTeacherLoginModal()">Teacher Login</p>
-        <p id="enter-exam" (click)="openEnterExamModal()" class="hover">Enter an exam</p>
+        <p id="teacher-login" class="hover" routerLink = "/auth/teacher-login">Teacher Login</p>
+        <p id="enter-exam" class="hover">Enter an exam</p>
 </main>
 
 

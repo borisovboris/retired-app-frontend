@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalService } from '../core/services/modal.service';
-import { ModalNames } from '../core/enums/modal-names-enum';
 
 @Component({
   selector: 'app-login',
@@ -9,21 +7,11 @@ import { ModalNames } from '../core/enums/modal-names-enum';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private modalService: ModalService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
 
-  openTeacherLoginModal(): void {
-    this.modalService.openModal(ModalNames.TeacherLogin);
-  }
 
-  openEnterExamModal(): void {
-    this.modalService.openModal(ModalNames.EnterExam);
-  }
-
-  openTeacherRegisterModal(): void {
-    this.modalService.openModal(ModalNames.TeacherRegister);
-  }
 
 }
