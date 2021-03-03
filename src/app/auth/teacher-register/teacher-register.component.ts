@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { MatchPasswords } from '../../helpers/match-passwords.validator'
 
 @Component({
   selector: 'app-teacher-register',
@@ -7,21 +8,28 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./teacher-register.component.css']
 })
 export class TeacherRegisterComponent implements OnInit {
-  registerForm: FormGroup = new FormGroup({
-    username: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    email: new FormControl('', [Validators.required]),
-    password: new FormControl('', [Validators.required]),
-    repeatPassword: new FormControl('', [Validators.required])
-  });
+  registerForm = this.fb.group({
+    username: ['', [Validators.required, Validators.minLength(3)]],
+    email: ['', [Validators.required]],
+    password: ['', [Validators.required]],
+    confirmPassword: ['', [Validators.required]] },
+    { validator: MatchPasswords });
 
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
+    
+
+
+  }
+
+  get f() {
+    return this.registerForm.controls;
   }
 
   submit() {
-    console.log(this.registerForm.value);
-    console.log(this.registerForm.controls);
+    console.log(this.registerForm?.value);
+    console.log(this.registerForm?.controls);
   }
 
 }
