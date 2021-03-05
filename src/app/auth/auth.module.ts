@@ -7,6 +7,7 @@ import { TeacherRegisterComponent } from './teacher-register/teacher-register.co
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
+
 @NgModule({
   declarations: [TeacherLoginComponent, TeacherRegisterComponent],
   imports: [
