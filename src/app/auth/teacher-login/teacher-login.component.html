@@ -1,1 +1,24 @@
-<p>teacher-login works!</p>
+<div class="wrapper">
+    <div class="content">
+        <form [formGroup]="loginForm" (ngSubmit)="submit()">
+            <h1>Sign in</h1>
+            <div id="inputs">
+
+                <input name="username" formControlName="username" type="text" placeholder="Username"><br>
+                <div *ngIf="f.username.invalid && f.username.touched">
+                    <div *ngIf="f.username.errors?.required">username is required</div>
+                </div>
+
+                <input name="password" formControlName="password" type="password" placeholder="Password"><br>
+                <div *ngIf="f.password.invalid && f.password.touched">
+                    <div *ngIf="f.password.errors?.required">password is required</div>
+                </div>
+
+
+            </div>
+            <button id="sign-in" class="hover" type="submit" [disabled]="this.loginForm.invalid">Sign in</button>
+        </form>
+
+        <p id="sign-up">Don't have an account? <span class="hover"><b>Sign up.</b></span></p>
+    </div>
+</div>
