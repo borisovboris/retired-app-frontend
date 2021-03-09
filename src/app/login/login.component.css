@@ -1,22 +1,28 @@
 nav {
-    background-color: var(--edward);
-    padding: 1.5rem 2rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 1.2rem 2rem;
     overflow: auto;
 }
 
 #exam-results {
-    background-color: var(--tacao);
+    background-color: transparent;
+    color: var(--sherpa-blue);
+    font-weight: 800;
+    border: whitesmoke 3px solid;
     float: right;
     border-radius: 4px;
-    padding: 15px 10px;
+    padding: 12px 10px;
 }
 
 #teacher-register {
-    background-color: var(--tacao);
+    background-color: transparent;
     float: right;
+    color: var(--sherpa-blue);
     border-radius: 4px;
+    background-color: whitesmoke;
     padding: 15px 10px;
     margin-right: 10px;
+    font-weight: 800;
 }
 
 #enter-exam {
@@ -39,7 +45,14 @@ nav {
 }
 
 main {
+    /* background-color: #eef3d2;
+    background-image: linear-gradient(135deg, #eef3d2 21%, #f75c57 78%); */
+    background-image: url('../../assets/images/bench-accounting.jpg');
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
     text-align: center;
+    height: 100vh;
 }
 
 

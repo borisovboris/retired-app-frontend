@@ -1,5 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
+import { SubjectService } from 'src/app/teacher/subject.service';
 import { TeacherService } from 'src/app/teacher/teacher.service';
 import { MatchPasswords } from '../../helpers/match-passwords.validator'
 
@@ -12,11 +15,17 @@ export class TeacherRegisterComponent implements OnInit {
   registerForm = this.fb.group({
     username: ['', [Validators.required, Validators.minLength(3)]],
     email: ['', [Validators.required]],
-    password: ['', [Validators.required]],
+    password: ['', [Validators.required, Validators.minLength(6)]],
     confirmPassword: ['', [Validators.required]] },
     { validator: MatchPasswords });
 
-  constructor(private fb: FormBuilder, public ts: TeacherService) { }
+  constructor(
+    private fb: FormBuilder, 
+    private ts: TeacherService,
+    private router: Router,
+    private ss: SubjectService,
+    private http: HttpClient
+    ) { }
 
   ngOnInit(): void {
     
@@ -36,8 +45,11 @@ export class TeacherRegisterComponent implements OnInit {
       return;
     }
 
-    this.ts.create(username, email, password);
-    
+    this.ts.register(username, email, password).subscribe((data) => {
+      console.log('register: ' + JSON.stringify(data));
+      this.router.navigate(['/auth/teacher-login']);
+    });
+
   }
 
 }

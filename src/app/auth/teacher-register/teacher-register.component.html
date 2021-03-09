@@ -7,6 +7,7 @@
                 <input name="username" formControlName="username" type="text" placeholder="Username"><br>
                 <div *ngIf="f.username.invalid && f.username.touched">
                     <div *ngIf="f.username.errors?.required">username is required</div>
+                    <div *ngIf="f.username.errors?.minlength">must be at least {{f.username.errors?.minlength.requiredLength}} characters</div>
                 </div>
 
                 <input name="email" formControlName="email" type="email" placeholder="Email"><br>
@@ -17,6 +18,7 @@
                 <input name="password" formControlName="password" type="password" placeholder="Password"><br>
                 <div *ngIf="f.password.invalid && f.password.touched">
                     <div *ngIf="f.password.errors?.required">password is required</div>
+                    <div *ngIf="f.password.errors?.minlength">must be at least {{f.password.errors?.minlength.requiredLength}} characters</div>
                 </div>
 
                 <input name="confirmPassword" formControlName="confirmPassword" type="password"
@@ -30,6 +32,6 @@
             <button id="sign-up" class="hover" type="submit" [disabled]="this.registerForm.invalid">Sign up</button>
         </form>
 
-        <p id="sign-in">Already have an account? <span class="hover"><b>Sign in.</b></span></p>
+        <p id="sign-in">Already have an account? <span class="hover" routerLink="/auth/teacher-login"><b>Sign in.</b></span></p>
     </div>
 </div>

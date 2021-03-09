@@ -1,5 +1,6 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Teacher } from '../core/models/teacher.model';
 
 @Injectable({
@@ -11,11 +12,13 @@ export class TeacherService {
 
   constructor(private http: HttpClient) {}
 
-  create(username: string, email: string, password: string) {
+  register(username: string, email: string, password: string) {
     const teacher: Teacher = { username, email, password };
-    const headers = new HttpHeaders();
-    headers.append('Content-Type', 'application/json');
-    this.http.post<String>('http://localhost:3000/auth/teacher-register', teacher, { headers });
+    return this.http.post<any>('http://localhost:3000/auth/teacher-register', teacher);
+  }
+
+  login(username: string, password: string): Observable<any> {
+    return this.http.post<any>('http://localhost:3000/auth/teacher-login', { username, password });
   }
   
 }

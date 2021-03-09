@@ -17,4 +17,6 @@ export class SubjectsComponent implements OnInit {
     this.subjects$ = this.subjectService.getAllSubjects();
   }
 
+  
+
 }

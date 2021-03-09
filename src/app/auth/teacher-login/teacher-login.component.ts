@@ -8,9 +8,12 @@ import { TeacherService } from 'src/app/teacher/teacher.service';
   styleUrls: ['./teacher-login.component.css']
 })
 export class TeacherLoginComponent implements OnInit {
-  loginForm: any;
+  loginForm = this.fb.group({
+    username: ['', [Validators.required]],
+    password: ['', [Validators.required]]
+  });
 
-  constructor() { }
+  constructor(private fb: FormBuilder, private ts: TeacherService) { }
 
   ngOnInit(): void {
   }
@@ -20,6 +23,15 @@ export class TeacherLoginComponent implements OnInit {
   }
 
   submit() {
+    const { username, password } = this.loginForm?.value;
     
+    if(this.loginForm.invalid) {
+      return;
+    }
+
+    this.ts.login(username, password).subscribe((data) => 
+      localStorage.setItem("token_id", data.token)
+    );
   }
+  
 }
