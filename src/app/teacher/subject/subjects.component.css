@@ -1,0 +1,75 @@
+.wrapper {
+    background-color: #E8E8E8;
+    min-height: 100vh;
+    color: var(--sherpa-blue);
+}
+
+nav {
+    background-color: whitesmoke;
+    padding: 0.7rem 2rem;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+    overflow: auto;
+    position: fixed;
+    width: 100%;
+}
+
+main {
+    padding-left: 6rem;
+    padding-right: 6rem;
+    padding-top: 6rem;
+    padding-bottom: 3rem;
+}
+
+#log-out {
+    color: var(--sherpa-blue);
+    border-radius: 4px;
+    border:rgba(0, 0, 0, 0.19) 1px solid;
+    padding: 0.5rem 0.7rem;
+    font-weight: 900;
+    float: right;
+}
+
+#heading {
+    
+}
+
+#subheading {
+    margin-top: 10px;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 2rem 0;
+}
+
+.flex-item {
+    width: calc(25% - 2rem);
+    /* -2rem because theres a margin of 1 rem on each side of every flex item*/
+    background-color: whitesmoke;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 4px;
+    margin: 1rem;
+    min-height: 12rem;
+    position: relative;
+}
+
+.flex-item h3 {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+#add-subject {
+    margin: 2rem 0;
+    background-color: #1976d2;
+    color: white;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: 900;
+}

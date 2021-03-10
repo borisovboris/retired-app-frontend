@@ -22,9 +22,7 @@ export class TeacherRegisterComponent implements OnInit {
   constructor(
     private fb: FormBuilder, 
     private ts: TeacherService,
-    private router: Router,
-    private ss: SubjectService,
-    private http: HttpClient
+    private router: Router
     ) { }
 
   ngOnInit(): void {

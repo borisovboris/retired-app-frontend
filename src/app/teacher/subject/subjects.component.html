@@ -1,0 +1,21 @@
+<div class="wrapper">
+    <nav>
+        <p id="log-out" class="hover">Log Out</p>
+        <h2 id="heading">Subjects</h2>
+    </nav>
+    
+    <main>
+    
+        <h3 id="subheading">Your Subjects</h3>
+        <p id="add-subject" class="hover" routerLink="add">Add Subject</p>
+    
+    
+        <div class="flex-container">
+            <div class="flex-item hover" *ngFor="let subjectName of subjects$ | async">
+                <h3>
+                    {{ subjectName }}
+                </h3>
+            </div>
+        </div>
+    </main>
+</div>
