@@ -67,8 +67,9 @@ h1 {
 
 #back {
     position: absolute;
-    left: 15%;
+    left: 10%;
     font-size: 5rem;
     font-weight: 900;
     color:rgba(255, 255, 255, 0.7);
 }
+

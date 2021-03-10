@@ -3,13 +3,16 @@
         <form [formGroup]="subjectForm" (ngSubmit)="submit()">
             <h1>Create subject</h1>
             <div id="inputs">
-                <input name="subjectName" formControlName="subjectName" type="text" placeholder="Subject name"><br>
+                <input name="subjectName" formControlName="subjectName" type="text" placeholder="Name"><br>
                 <div *ngIf="f.subjectName.invalid && f.subjectName.touched">
                     <div *ngIf="f.subjectName.errors?.required">subject name is required</div>
                     <div *ngIf="f.subjectName.errors?.minlength">must be at least
                         {{f.subjectName.errors?.minlength.requiredLength}} characters</div>
                 </div>
-                <input name="description" formControlName="description" type="description" placeholder="Subject description"><br>
+                
+                <textarea id="description" name="description" formControlName="description" type="description" placeholder="Description (optional)">
+                </textarea><br>
+                
             </div>
 
             <button id="create" class="hover" type="submit" [disabled]="this.subjectForm.invalid">Create</button>

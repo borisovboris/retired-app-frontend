@@ -19,8 +19,15 @@ input:focus {
     outline: none;
 }
 
-input, button, submit {
+input, button, textarea {
     border: none;
+}
+
+textarea {
+    box-shadow: none;
+    resize: none;
+    outline: none;
+    overflow: auto;
 }
 
 body {
@@ -31,3 +38,4 @@ body {
 .hover:hover {
     cursor: pointer;
 }
+

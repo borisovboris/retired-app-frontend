@@ -66,7 +66,7 @@ main {
 
 #add-subject {
     margin: 2rem 0;
-    background-color: #1976d2;
+    background-color: var(--sherpa-blue);
     color: white;
     display: inline-block;
     padding: 0.5rem 1rem;

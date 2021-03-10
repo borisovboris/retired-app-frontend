@@ -1,5 +1,5 @@
 nav {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.32);
     padding: 1.2rem 2rem;
     overflow: auto;
 }
@@ -13,7 +13,7 @@ nav {
     padding: 0.5rem 0.7rem;
 }
 
-#teacher-register {
+#teacher-login {
     float: right;
     color: var(--sherpa-blue);
     border-radius: 4px;
@@ -24,8 +24,8 @@ nav {
 }
 
 #enter-exam {
-    background-color: var(--ecstasy);
-    color: var(--sherpa-blue);
+    background-color: var(--sherpa-blue);
+    color: white;
     padding: 15px 10px;
     border-radius: 4px;
     display: inline-block;
@@ -33,9 +33,9 @@ nav {
 
 }
 
-#teacher-login {
-    background-color: var(--ecstasy);
-    color: var(--sherpa-blue);
+#teacher-register {
+    background-color: var(--sherpa-blue);
+    color: white;
     padding: 15px 10px;
     border-radius: 4px;
     display: inline-block;
@@ -49,8 +49,17 @@ nav {
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
-    text-align: center;
     min-height: 100vh;
+}
+
+main {
+    padding: 2rem 4rem;
+}
+
+.heading {
+    color: white;
+    font-size: 5rem;
+    text-shadow: 1px 1px black;
 }
 
 
