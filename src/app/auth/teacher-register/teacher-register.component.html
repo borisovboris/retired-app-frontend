@@ -1,8 +1,11 @@
 <div class="wrapper">
 
-    <div id="back" class="hover" routerLink="/">&#60;</div>
+    <div id="back" class="hover" routerLink="/">
+        <i class="fas fa-chevron-left"></i>
+        <p>home</p>
+    </div>
 
-    <div class="content">
+    <main>
         <form [formGroup]="registerForm" (ngSubmit)="submit()">
             <h1>Sign up</h1>
             <div id="inputs">
@@ -36,5 +39,5 @@
         </form>
 
         <p id="sign-in">Already have an account? <span class="hover" routerLink="/auth/teacher-login"><b>Sign in.</b></span></p>
-    </div>
+    </main>
 </div>

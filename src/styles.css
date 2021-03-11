@@ -39,3 +39,10 @@ body {
     cursor: pointer;
 }
 
+i, i:hover, i:focus, i:active {
+    text-decoration: none;
+    color: inherit;
+    outline: none;
+    border: none;
+}
+

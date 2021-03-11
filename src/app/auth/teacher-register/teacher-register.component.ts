@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Teacher } from 'src/app/core/models/teacher.model';
 import { SubjectService } from 'src/app/teacher/subject.service';
 import { TeacherService } from 'src/app/teacher/teacher.service';
 import { MatchPasswords } from '../../helpers/match-passwords.validator'
@@ -37,13 +38,13 @@ export class TeacherRegisterComponent implements OnInit {
 
   submit() {
     const registerForm = this.registerForm;
-    const { username, email, password } = registerForm?.value;
+    const teacher: Teacher = registerForm?.value;
 
     if(registerForm.invalid) {
       return;
     }
 
-    this.ts.register(username, email, password).subscribe((data) => {
+    this.ts.register(teacher).subscribe((data) => {
       console.log('register: ' + JSON.stringify(data));
       this.router.navigate(['/auth/teacher-login']);
     });

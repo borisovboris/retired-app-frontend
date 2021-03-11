@@ -12,8 +12,7 @@ export class TeacherService {
 
   constructor(private http: HttpClient) {}
 
-  register(username: string, email: string, password: string) {
-    const teacher: Teacher = { username, email, password };
+  register(teacher: Teacher) {
     return this.http.post<any>('http://localhost:3000/auth/teacher-register', teacher);
   }
 

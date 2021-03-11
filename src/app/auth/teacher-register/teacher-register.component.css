@@ -6,7 +6,7 @@
     position: relative;
 }
 
-.content {
+main {
     margin: auto;
     position: absolute;
     top: 50%;
@@ -37,6 +37,7 @@ form {
 
 h1 {
   margin-bottom: 1rem;
+  color: var(--sherpa-blue);
 }
 
 
@@ -66,9 +67,27 @@ h1 {
 }
 
 #back {
-    position: absolute;
-    left: 15%;
-    font-size: 5rem;
-    font-weight: 900;
+    position: relative;
+    display: inline-block;
+    left: 10%;
+    top: 5%;
     color:rgba(255, 255, 255, 0.7);
+}
+
+#back i {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+#back:hover {
+    color:rgba(255, 255, 255, 0.9);
+}
+
+#back p {
+    padding-left: 0.7rem;
+    display: inline-block;
+    position: absolute;
+    font-size: 1.5rem;
+    top: 47%;
+    transform: translateY(-50%);
 }

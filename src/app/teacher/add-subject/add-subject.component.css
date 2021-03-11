@@ -1,7 +1,8 @@
 .wrapper {
-    min-height: 100vh;
+    height: 100vh;
     background-color: #E8E8E8;
     position: relative;
+    width: 100%;
 }
 
 
@@ -49,6 +50,7 @@ form {
 
 h1 {
   margin-bottom: 1rem;
+  color: var(--sherpa-blue);
 }
 
 
@@ -67,9 +69,27 @@ h1 {
 }
 
 #back {
+    position: relative;
+    display: inline-block;
+    left: 10%;
+    top: 5%;
+    color:rgba(0, 76, 86, 0.7);
+}
+
+#back i {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+#back:hover {
+    color:rgba(0, 76, 86, 0.9);;
+}
+
+#back p {
+    padding-left: 0.7rem;
+    display: inline-block;
     position: absolute;
-    left: 15%;
-    font-size: 5rem;
-    font-weight: 900;
-    color:rgba(255, 255, 255, 0.7);
+    font-size: 1.5rem;
+    top: 47%;
+    transform: translateY(-50%);
 }

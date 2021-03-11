@@ -11,9 +11,9 @@
     
     
         <div class="flex-container">
-            <div class="flex-item hover" *ngFor="let subjectName of subjects$ | async">
+            <div class="flex-item hover" *ngFor="let subject of subjects$ | async">
                 <h3>
-                    {{ subjectName }}
+                    {{ subject.name }}
                 </h3>
             </div>
         </div>

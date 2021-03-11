@@ -9,7 +9,7 @@ import { SubjectService } from '../subject.service';
 })
 export class SubjectsComponent implements OnInit {
 
-  subjects$: Observable<Array<string>> | undefined;
+  subjects$: Observable<any> | undefined;
 
   constructor(private subjectService: SubjectService) { }
 
