@@ -19,5 +19,12 @@ export class SubjectService {
   createSubject(subject: Subject) {
     return this.http.post(this.baseUrl, subject);
   }
+
+  getSubject(id: any) {
+    return this.http.get(this.baseUrl + '/' + id);
+    // .subscribe(data => {
+    //   console.log(data);
+    // });
+  }
   
 }

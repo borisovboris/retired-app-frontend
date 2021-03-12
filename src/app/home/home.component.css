@@ -57,9 +57,9 @@ main {
 }
 
 .heading {
-    color: white;
+    color: #E8E8E8;
     font-size: 5rem;
-    text-shadow: 1px 1px black;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.7);
 }
 
 

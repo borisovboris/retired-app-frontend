@@ -3,6 +3,7 @@ import { Validators, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subject } from 'src/app/core/models/subject.model';
 import { SubjectService } from '../subject.service';
+import { delay } from 'rxjs/operators';
 
 @Component({
   selector: 'app-add-subject',
@@ -36,7 +37,7 @@ export class AddSubjectComponent implements OnInit {
     }
 
     this.ss.createSubject(subject).subscribe((data) => {
-      this.router.navigate(['/subjects'])
+      this.router.navigate(['/subjects']);
     });
   }
 

@@ -1,0 +1,26 @@
+<div class="wrapper">
+    <ng-container *ngIf="subject$ | async as subject">
+
+
+        <nav>
+            <div id="back" class="hover clearfix" routerLink="/subjects">
+                <i class="fas fa-chevron-left"></i>
+                <p>subjects</p>
+            </div>
+            <h2 id="heading">{{subject.name | uppercase}}</h2>
+        </nav>
+
+        <main>
+
+            <p id="add-subject" class="hover">Add Exam</p>
+            <h3 id="subheading">Exams</h3>
+
+            <div class="flex-container">
+                <div class="flex-item hover">
+                    <h3>
+                    </h3>
+                </div>
+            </div>
+        </main>
+    </ng-container>
+</div>

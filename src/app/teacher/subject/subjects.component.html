@@ -6,12 +6,12 @@
     
     <main>
     
-        <h3 id="subheading">Your Subjects</h3>
         <p id="add-subject" class="hover" routerLink="add">Add Subject</p>
+        <h3 id="subheading">Your Subjects</h3>
     
     
         <div class="flex-container">
-            <div class="flex-item hover" *ngFor="let subject of subjects$ | async">
+            <div class="flex-item hover" *ngFor="let subject of subjects$ | async" routerLink="{{subject.id}}">
                 <h3>
                     {{ subject.name }}
                 </h3>
