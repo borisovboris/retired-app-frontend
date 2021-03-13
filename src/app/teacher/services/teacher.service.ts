@@ -20,5 +20,9 @@ export class TeacherService {
   login(username: string, password: string): Observable<any> {
     return this.http.post<any>('http://localhost:3000/auth/teacher-login', { username, password });
   }
+
+  searchTeacher(criteria: string): Observable<any> {
+    return this.http.get<any>('http://localhost:3000/teachers/search/' + criteria);
+  }
   
 }

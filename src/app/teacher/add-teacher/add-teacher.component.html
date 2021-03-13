@@ -1,1 +1,7 @@
 <p>add-teacher works!</p>
+
+<input placeholder="Search by username or email" #input>
+
+<ng-container *ngFor="let teacher of teachers | async">
+    {{ teacher | json }}
+</ng-container>
