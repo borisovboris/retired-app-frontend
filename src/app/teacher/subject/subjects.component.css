@@ -5,9 +5,8 @@
 }
 
 nav {
-    background-color: whitesmoke;
     padding: 0.7rem 2rem;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 2px -2px #C8C8C8;
     overflow: auto;
     position: fixed;
     width: 100%;
@@ -23,14 +22,11 @@ main {
 #log-out {
     color: var(--sherpa-blue);
     border-radius: 4px;
+    background-color: #F0F0F0;
     border:rgba(0, 0, 0, 0.19) 1px solid;
     padding: 0.5rem 0.7rem;
     font-weight: 900;
     float: right;
-}
-
-#heading {
-    
 }
 
 #subheading {
@@ -65,10 +61,4 @@ main {
 
 #add-subject {
     margin: 2rem 0;
-    background-color: var(--sherpa-blue);
-    color: white;
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    font-weight: 900;
 }

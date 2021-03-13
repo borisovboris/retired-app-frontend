@@ -1,18 +1,22 @@
-<div class="wrapper">
-    <ng-container *ngIf="subject$ | async as subject">
+<ng-container *ngIf="subject$ | async as subject">
+    <div class="wrapper">
 
 
         <nav>
-            <div id="back" class="hover clearfix" routerLink="/subjects">
-                <i class="fas fa-chevron-left"></i>
-                <p>subjects</p>
+            <div id="heading-nav">
+                <h2 id="heading">{{subject.name | uppercase}}</h2>
             </div>
-            <h2 id="heading">{{subject.name | uppercase}}</h2>
+
+            <div id="button-nav">
+                <button id="add-exam" class="hover blue-button" routerLink="add-exam">Add Exam</button>
+                <button id="topics" class="hover blue-button" routerLink="topics">Topics</button>
+                <button id="teachers" class="hover blue-button" routerLink="teachers">Teachers</button>
+            </div>
         </nav>
 
         <main>
 
-            <p id="add-subject" class="hover">Add Exam</p>
+
             <h3 id="subheading">Exams</h3>
 
             <div class="flex-container">
@@ -22,5 +26,5 @@
                 </div>
             </div>
         </main>
-    </ng-container>
-</div>
+    </div>
+</ng-container>

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Subject } from '../core/models/subject.model';
+import { Subject } from '../../core/models/subject.model';
 
 @Injectable({
   providedIn: 'root'
@@ -20,11 +20,12 @@ export class SubjectService {
     return this.http.post(this.baseUrl, subject);
   }
 
-  getSubject(id: any) {
-    return this.http.get(this.baseUrl + '/' + id);
-    // .subscribe(data => {
-    //   console.log(data);
-    // });
+  getSubject(subjectId: any) {
+    return this.http.get(this.baseUrl + '/' + subjectId);
+  }
+
+  getSubjectTeachers(subjectId: any) {
+    return this.http.get(this.baseUrl + '/' + subjectId + '/teachers');
   }
   
 }

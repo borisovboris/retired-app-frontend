@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
-import { SubjectService } from '../subject.service';
+import { SubjectService } from '../services/subject.service';
 
 @Component({
   selector: 'app-subject-details',
@@ -11,13 +10,15 @@ import { SubjectService } from '../subject.service';
 })
 export class SubjectDetailsComponent implements OnInit {
   subject$: Observable<any>;
+  subjectId: string | null;
 
   constructor(
     private readonly subjectService: SubjectService,
-    private readonly route: ActivatedRoute
+    private readonly route: ActivatedRoute,
+    private readonly router: Router
     ) {
-      const subjectId = this.route.snapshot.paramMap.get('id');
-      this.subject$ = this.subjectService.getSubject(subjectId);
+      this.subjectId = this.route.snapshot.paramMap.get('id');
+      this.subject$ = this.subjectService.getSubject(this.subjectId);
     }
 
   ngOnInit(): void {

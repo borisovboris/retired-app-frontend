@@ -46,3 +46,11 @@ i, i:hover, i:focus, i:active {
     border: none;
 }
 
+.blue-button {
+    background-color: var(--sherpa-blue);
+    color: white;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+

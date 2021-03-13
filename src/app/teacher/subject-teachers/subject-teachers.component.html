@@ -1,0 +1,24 @@
+<ng-container *ngIf="subject$ | async as subject">
+
+    <div class="wrapper">
+        <nav>
+            <div id="heading-nav">
+                <h2 id="heading"> {{ subject.name | uppercase }} / Teachers </h2>
+            </div>
+
+            <div id="button-nav">
+                <button id="teachers" class="hover blue-button" routerLink="add-teacher">Add teacher</button>
+            </div>
+        </nav>
+
+        <main>
+
+
+            <h3 id="subheading"> {{subject.name | uppercase }} teachers</h3>
+
+            <ul>
+                <li *ngFor="let subjectTeacher of subjectTeachers$ | async">{{subjectTeacher.username}}</li>
+            </ul>
+        </main>
+    </div>
+</ng-container>

@@ -1,10 +1,8 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Teacher } from 'src/app/core/models/teacher.model';
-import { SubjectService } from 'src/app/teacher/subject.service';
-import { TeacherService } from 'src/app/teacher/teacher.service';
+import { TeacherService } from 'src/app/teacher/services/teacher.service';
 import { MatchPasswords } from '../../helpers/match-passwords.validator'
 
 @Component({
@@ -22,7 +20,7 @@ export class TeacherRegisterComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder, 
-    private ts: TeacherService,
+    private teacherService: TeacherService,
     private router: Router
     ) { }
 
@@ -44,7 +42,7 @@ export class TeacherRegisterComponent implements OnInit {
       return;
     }
 
-    this.ts.register(teacher).subscribe((data) => {
+    this.teacherService.register(teacher).subscribe((data) => {
       console.log('register: ' + JSON.stringify(data));
       this.router.navigate(['/auth/teacher-login']);
     });

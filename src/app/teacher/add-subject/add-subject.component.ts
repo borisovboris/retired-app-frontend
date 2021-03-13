@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Validators, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subject } from 'src/app/core/models/subject.model';
-import { SubjectService } from '../subject.service';
+import { SubjectService } from '../services/subject.service';
 import { delay } from 'rxjs/operators';
 
 @Component({

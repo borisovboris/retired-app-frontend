@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/internal/Observable';
-import { SubjectService } from '../subject.service';
+import { SubjectService } from '../services/subject.service';
 
 @Component({
   selector: 'app-subjects',
