@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { fromEvent, Observable, Subscription } from 'rxjs';
+import { ActivatedRoute, Router } from '@angular/router';
+import { fromEvent, Observable, of, Subject, Subscription } from 'rxjs';
 import { debounceTime, distinctUntilChanged, filter, tap } from 'rxjs/operators';
 import { TeacherService } from '../services/teacher.service';
 
@@ -10,12 +11,21 @@ import { TeacherService } from '../services/teacher.service';
 })
 export class AddTeacherComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('input') input!: ElementRef;
-  inputSubscription!: Subscription;
-  teachers!: Observable<any>;
 
-  constructor(private readonly teacherService: TeacherService) { }
+  inputSubscription!: Subscription;
+  teachers$!: Observable<any>;
+  subjectId!: string | null;
+  selectedTeacher: any | null;
+  errorMessage!: string | null;
+
+  constructor(
+    private readonly teacherService: TeacherService,
+    private readonly route: ActivatedRoute,
+    private readonly router: Router
+  ) { }
 
   ngOnInit(): void {
+    this.subjectId = this.route.snapshot.paramMap.get('id');
   }
 
   ngAfterViewInit() {
@@ -28,14 +38,37 @@ export class AddTeacherComponent implements OnInit, AfterViewInit, OnDestroy {
       tap((text) => { console.log(text) })
     ).subscribe(() => {
       const criteria = this.input.nativeElement.value;
-      this.teachers = this.teacherService.searchTeacher(criteria);
+      this.teachers$ = this.teacherService.searchTeacher(criteria);
     });
+
 
   }
 
   ngOnDestroy() {
     // we need to close the subscription to prevent memory leaks
-    this.inputSubscription.unsubscribe();
+    this.inputSubscription!.unsubscribe();
+  }
+
+  selectTeacher(teacher: any) {
+    this.selectedTeacher = teacher;
+    this.errorMessage = null;
+  }
+
+  deselectTeacher() {
+    this.selectedTeacher = null;
+  }
+
+  submit() {
+
+    if(!this.selectedTeacher) { 
+      this.errorMessage = 'a teacher must be selected';
+      return;
+    }
+
+    this.teacherService.addTeacherToSubject(this.selectedTeacher.id, this.subjectId).subscribe(data => {
+      this.router.navigate([`/subjects/${this.subjectId}/teachers/`]);
+    });
+
   }
 
 }

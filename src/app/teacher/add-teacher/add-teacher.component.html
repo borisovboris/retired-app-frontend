@@ -1,7 +1,39 @@
-<p>add-teacher works!</p>
+<div class="wrapper">
 
-<input placeholder="Search by username or email" #input>
+    <div id="back" class="hover" routerLink="/subjects/{{subjectId}}/teachers">
+        <i class="fas fa-chevron-left"></i>
+        <p>teachers</p>
+    </div>
 
-<ng-container *ngFor="let teacher of teachers | async">
-    {{ teacher | json }}
-</ng-container>
+    <main>
+        <form>
+            <h1>Add teacher</h1>
+            <div id="inputs">
+
+                <div [hidden]="selectedTeacher">
+                    <input placeholder="Search by username or email" #input>
+    
+                    <ul id="teachers-list">
+                        <ng-container *ngFor="let teacher of teachers$ | async">
+                            <li class="hover" (click)="selectTeacher(teacher)">
+                                <div>{{teacher.username}}</div>
+                                <div>{{teacher.email}}@outlook.com</div>
+                            </li>
+                        </ng-container>
+                    </ul>
+                </div>
+
+                <div *ngIf="selectedTeacher" id="selected-teacher">
+                    <p>{{selectedTeacher.username}}</p>
+                    <p>{{selectedTeacher.email}}@outlook.com</p>
+                    <button id="cancel" class="hover" (click)="deselectTeacher()">Cancel</button>
+                </div>
+
+                <p *ngIf="errorMessage">{{errorMessage}}</p>
+
+            </div>
+
+            <button id="add" class="hover" type="submit" [disabled] (click)="submit()">Add</button>
+        </form>
+    </main>
+</div>

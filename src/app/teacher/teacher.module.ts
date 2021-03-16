@@ -9,6 +9,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SubjectDetailsComponent } from './subject-details/subject-details.component';
 import { AddTeacherComponent } from './add-teacher/add-teacher.component';
 import { SubjectTeachersComponent } from './subject-teachers/subject-teachers.component';
+import { TopicsComponent } from './topics/topics.component';
+import { AddTopicComponent } from './add-topic/add-topic.component';
 
 
 @NgModule({
@@ -17,7 +19,7 @@ import { SubjectTeachersComponent } from './subject-teachers/subject-teachers.co
     AddSubjectComponent, 
     SubjectDetailsComponent, 
     AddTeacherComponent, 
-    SubjectTeachersComponent],
+    SubjectTeachersComponent, TopicsComponent, AddTopicComponent],
   imports: [
     CommonModule,
     TeacherRoutingModule,

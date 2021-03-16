@@ -24,5 +24,9 @@ export class TeacherService {
   searchTeacher(criteria: string): Observable<any> {
     return this.http.get<any>('http://localhost:3000/teachers/search/' + criteria);
   }
+
+  addTeacherToSubject(teacherId: number, subjectId: any) {
+    return this.http.post<any>('http://localhost:3000/teachers/add-teacher-to-subject', { teacherId, subjectId});
+  }
   
 }
