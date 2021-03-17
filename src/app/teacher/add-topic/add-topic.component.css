@@ -1,0 +1,95 @@
+.wrapper {
+    height: 100vh;
+    background-color: #E8E8E8;
+    position: relative;
+    width: 100%;
+}
+
+
+main {
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+}
+
+form {
+    background-color: whitesmoke;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    padding-left: 2rem;
+    padding-right: 3rem;
+    border-radius: 2px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#inputs input {
+    width: 100%;
+    margin: 10px 0;
+    padding: 7px 0;
+    background-color: inherit;
+    border-bottom: 1px var(--sherpa-blue) solid;
+}
+
+#inputs * {
+    
+}
+
+#description {
+    margin: 1rem 0;
+    min-height: 200px;
+    width: 100%;
+    border-bottom: 1px var(--sherpa-blue) solid;
+    padding: 20px;
+    border-radius: 4px 4px 0 0;
+}
+
+
+h1 {
+  margin-bottom: 1rem;
+  color: var(--sherpa-blue);
+}
+
+
+#create {
+  margin-top: 2rem;
+  display: inline-block;
+  color: whitesmoke;
+  background-color: var(--sherpa-blue);
+  border-radius: 20px;
+  font-weight: bold;
+  padding: 0.5rem 0.8rem;
+}
+
+#create:disabled {
+    cursor: not-allowed;
+}
+
+#back {
+    position: relative;
+    display: inline-block;
+    left: 10%;
+    top: 5%;
+    color:rgba(0, 76, 86, 0.7);
+}
+
+#back i {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+#back:hover {
+    color:rgba(0, 76, 86, 0.9);;
+}
+
+#back p {
+    padding-left: 0.7rem;
+    display: inline-block;
+    position: absolute;
+    font-size: 1.5rem;
+    top: 47%;
+    transform: translateY(-50%);
+}

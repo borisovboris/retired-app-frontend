@@ -27,7 +27,6 @@ import { AddTopicComponent } from './add-topic/add-topic.component';
     ReactiveFormsModule
   ],
   providers: [
-    TeacherService
   ]
 })
 export class TeacherModule { }

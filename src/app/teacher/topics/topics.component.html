@@ -3,20 +3,20 @@
     <div class="wrapper">
         <nav>
             <div id="heading-nav">
-                <h2 id="heading"> {{ subject.name | uppercase }} - Teachers </h2>
+                <h2 id="heading"> {{ subject.name | uppercase }} - Topics </h2>
             </div>
 
             <div id="button-nav">
-                <button id="teachers" class="hover blue-button" routerLink="add-teacher">Add teacher</button>
+                <button id="teachers" class="hover blue-button" routerLink="add-topic">Add topic</button>
             </div>
         </nav>
 
         <main>
 
-            <h3 id="subheading"> {{subject.name | uppercase }} teachers</h3>
+            <h3 id="subheading"> {{subject.name | uppercase }} topics</h3>
 
             <ul>
-                <li *ngFor="let subjectTeacher of subjectTeachers$ | async">{{subjectTeacher | json}}</li>
+                <li *ngFor="let topic of topics$ | async">{{topic | json}}</li>
             </ul>
 
         </main>

@@ -1,1 +1,24 @@
-<p>add-topic works!</p>
+<div class="wrapper">
+
+    <div id="back" class="hover" routerLink="/subjects/{{subjectId}}/topics">
+        <i class="fas fa-chevron-left"></i>
+        <p>topics</p>
+    </div>
+
+    <main>
+        <form [formGroup]="topicForm" (ngSubmit)="submit()">
+            <h1>Create topic</h1>
+            <div id="inputs">
+                <input name="name" formControlName="name" type="text" placeholder="Name"><br>
+                <div *ngIf="f.name.invalid && f.name.touched">
+                    <div *ngIf="f.name.errors?.required">topic name is required</div>
+                    <div *ngIf="f.name.errors?.minlength">must be at least
+                        {{f.name.errors?.minlength.requiredLength}} characters</div>
+                </div>
+                
+            </div>
+
+            <button id="create" class="hover" type="submit" [disabled]="this.topicForm.invalid">Create</button>
+        </form>
+    </main>
+</div>

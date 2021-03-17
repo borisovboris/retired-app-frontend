@@ -13,12 +13,10 @@ export class SubjectTeachersComponent implements OnInit {
   subjectTeachers$: Observable<any>;
   
   constructor(
-    private readonly router: Router,
     private readonly route: ActivatedRoute,
     private readonly subjectService: SubjectService,
     ) { 
       const subjectId = this.route.snapshot.paramMap.get('id');
-      console.log(subjectId);
       this.subject$ = this.subjectService.getSubject(subjectId);
       this.subjectTeachers$ = this.subjectService.getSubjectTeachers(subjectId);
   }
