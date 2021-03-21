@@ -11,6 +11,7 @@ import { AddTeacherComponent } from './add-teacher/add-teacher.component';
 import { SubjectTeachersComponent } from './subject-teachers/subject-teachers.component';
 import { TopicsComponent } from './topics/topics.component';
 import { AddTopicComponent } from './add-topic/add-topic.component';
+import { TopicDetailsComponent } from './topic-details/topic-details.component';
 
 
 @NgModule({
@@ -19,7 +20,7 @@ import { AddTopicComponent } from './add-topic/add-topic.component';
     AddSubjectComponent, 
     SubjectDetailsComponent, 
     AddTeacherComponent, 
-    SubjectTeachersComponent, TopicsComponent, AddTopicComponent],
+    SubjectTeachersComponent, TopicsComponent, AddTopicComponent, TopicDetailsComponent],
   imports: [
     CommonModule,
     TeacherRoutingModule,

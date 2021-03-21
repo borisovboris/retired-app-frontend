@@ -43,11 +43,12 @@ main {
     width: calc(25% - 2rem);
     /* -2rem because theres a margin of 1 rem on each side of every flex item*/
     background-color: whitesmoke;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
     border-radius: 4px;
     margin: 1rem;
     min-height: 12rem;
     position: relative;
+    border: #DDE8E8 solid 1px;
 }
 
 .flex-item h3 {

@@ -1,0 +1,154 @@
+/* .wrapper {
+    background-color: #E8E8E8;
+    min-height: 100vh;
+    color: var(--sherpa-blue);
+} */
+
+nav {
+    padding: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    box-shadow: 0 4px 2px -2px #C8C8C8;
+}
+
+#heading-nav {
+    background-color: #F0F0F0;
+    padding: 0.5rem 4rem;
+    overflow: hidden;
+}
+
+#heading-nav * {
+    display: inline-block;
+}
+
+#button-nav {
+    background-color: #E8E8E8;
+    padding: 0.8rem 6rem;
+}
+
+#button-nav button {
+    margin-right: 1rem;
+}
+
+#subheading {
+    margin-top: 10px;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.flex-item {
+    width: 50%;
+    height: 100vh;
+    padding-top: 8rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    /* -2rem because theres a margin of 1 rem on each side of every flex item*/
+}
+
+.flex-item.left {
+    background-color: #E8E8E8;
+}
+
+.flex-item.right {
+    background-color: #F5F5F5;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+    position: fixed;
+    overflow-y: auto;
+    right: 0;
+}
+
+#question-title {
+    width: 80%;
+}
+
+#add-question-title {
+    margin-bottom: 2rem;
+}
+
+#types {
+    margin: 1rem 0;
+}
+
+#add-question {
+    position: absolute;
+    display: block;
+    bottom: 5%;
+    left: 3rem;
+}
+
+#add-answer {
+    display: block;
+    margin-bottom: 1rem;
+}
+
+#answers-list {
+    margin: 1rem 0rem;
+}
+
+.answer {
+    width: 100%;
+    margin: 1rem 0rem;
+}
+
+
+.answer-text {
+    width: 70%;
+    margin: 0 1rem;
+}
+
+.answer-error {
+    margin-left: 28px;
+}
+
+input {
+    padding: 7px 0;
+    background-color: inherit;
+    border-bottom: 1px var(--sherpa-blue) solid;
+}
+
+.remove-btn {
+    padding: 0.2rem 0.4rem;
+}
+
+#questions-list {  
+    margin: 1rem 0rem;
+    border-collapse: collapse;
+    width: 100%;
+}
+  
+  #questions-list td, #questions-list th {
+    border-bottom: 1px solid var(--sherpa-blue);
+    padding: 8px;
+  }
+  
+  #questions-list tr:hover {
+       background-color: #ddd;
+       cursor: pointer;
+    }
+  
+  #questions-list th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    font-weight: 900;
+  }
+
+  #empty {
+      margin-top: 1rem;
+  }
+
+
+
+
+
+
+
+
+
+
+

@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class TopicService {
 
-  baseUrl = "http://localhost:3000";
+  readonly baseUrl = "http://localhost:3000";
 
   constructor(
     private readonly http: HttpClient
@@ -19,5 +19,13 @@ export class TopicService {
 
   getTopicsOfSubject(subjectId: any) {
     return this.http.get(`${this.baseUrl}/topics/${subjectId}`);
+  }
+
+  getTopics(topicId: any) {
+    return this.http.get(`${this.baseUrl}/topics/details/${topicId}`);
+  }
+
+  getTopicQuestions(topicId: any) {
+    return this.http.get(`${this.baseUrl}/topics/${topicId}/questions`)
   }
 }

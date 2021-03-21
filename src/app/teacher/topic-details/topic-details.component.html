@@ -1,0 +1,92 @@
+<ng-container *ngIf="topic$ | async as topic">
+
+    <div class="wrapper">
+        <nav>
+            <div id="heading-nav">
+                <h2 id="heading"> {{ topic.name | uppercase }} - Questions </h2>
+            </div>
+
+            <div id="button-nav">
+                <button id="teachers" class="hover blue-button" routerLink="add-topic">Add question</button>
+            </div>
+        </nav>
+
+        <main class="flex-container">
+
+            <div class="flex-item left">
+                <h3>Questions</h3>
+
+
+                <table id="questions-list">
+                    <tr>
+                        <th>Title</th>
+                        <th>Type</th>
+                    </tr>
+                    <ng-container *ngIf="(questions$ | async)?.length; else empty">
+                        <tr *ngFor="let question of questions$ | async" (click)="getQuestionAnswers(question.id)">
+                            <td>{{question.questionTitle}}</td>
+                            <td>{{question.type | uppercase}}</td>
+                        </tr>
+                    </ng-container>
+                </table>
+
+                <ng-template #empty>
+                    <p id="empty">No questions have been added yet</p>
+                </ng-template>
+
+            </div>
+
+            <div class="flex-item right">
+                <form [formGroup]="form">
+
+                    <h3 id="add-question-title">Add question</h3>
+
+                    <h4>Question type</h4>
+
+                    <div id="types">
+                        <div class="hover">
+                            <input type="radio" name="type" formControlName="type" value="open" id="open-type">
+                            <label for="open-type">open</label>
+                        </div>
+                        <div class="hover">
+                            <input type="radio" name="type" formControlName="type" value="closed" id="closed-type">
+                            <label for="closed-type">closed</label>
+                        </div>
+                    </div>
+
+                    <ng-container *ngIf="form.value.type != '' ">
+                        <input placeholder="Question's title" formControlName="questionTitle" id="question-title">
+                        <div *ngIf="f.questionTitle.invalid && f.questionTitle.touched || formSubmitted">
+                            <div *ngIf="f.questionTitle.errors?.required">title is required</div>
+                            <div *ngIf="f.questionTitle.errors?.minlength">title must be at least
+                                {{f.questionTitle.errors?.minlength.requiredLength}} characters</div>
+                        </div>
+                    </ng-container>
+
+                    <div id="answers-list" *ngIf="form.value.type == 'closed' ">
+                        <button id="add-answer" class="hover white-button" (click)="addAnswer()">Add answer</button>
+                        <p><i>Mark the checkbox of the questions that are correct</i></p>
+
+                        <div formArrayName="answers" *ngFor="let answer of answersControls; let i = index"
+                            class="answer">
+
+                            <div [formGroupName]="i">
+                                <input type="checkbox" formControlName="isCorrect" class="hover checkbox">
+                                <input formControlName="text" placeholder="Answer &#8470;{{i + 1}}" class="answer-text">
+                                <button (click)="removeAnswer(i)" class="hover remove-btn">Remove</button>
+                            </div>
+                            <div *ngIf="answersControls[i].invalid && answersControls[i].touched || formSubmitted"
+                                class="answer-error">
+                                <div *ngIf="answersControls[i].get('text')?.errors?.required">cannot be empty</div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <button id="add-question" class="hover blue-button" (click)="submitQuestion()">Add question</button>
+                </form>
+            </div>
+
+        </main>
+    </div>
+</ng-container>
