@@ -1,0 +1,24 @@
+<ng-container *ngIf="subject$ | async as subject">
+    <div class="wrapper">
+
+        <div id="back" class="hover" routerLink="/subjects/{{subjectId}}">
+            <i class="fas fa-chevron-left"></i>
+            <p>back to {{subject.name}}</p>
+        </div>
+
+        <main>
+            <form [formGroup]="examForm" (ngSubmit)="submit()">
+                <h1>Create exam</h1>
+                <div id="inputs">
+                    <input name="name" formControlName="name" type="text" placeholder="Name"><br>
+                    <div *ngIf="f.name.invalid && f.name.touched">
+                        <div *ngIf="f.name.errors?.required">exam name is required</div>
+                    </div>
+
+                </div>
+
+                <button id="create" class="hover" type="submit" [disabled]="this.examForm.invalid">Create</button>
+            </form>
+        </main>
+    </div>
+</ng-container>

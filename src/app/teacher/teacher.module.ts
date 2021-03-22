@@ -12,6 +12,7 @@ import { SubjectTeachersComponent } from './subject-teachers/subject-teachers.co
 import { TopicsComponent } from './topics/topics.component';
 import { AddTopicComponent } from './add-topic/add-topic.component';
 import { TopicDetailsComponent } from './topic-details/topic-details.component';
+import { AddExamComponent } from './add-exam/add-exam.component';
 
 
 @NgModule({
@@ -20,7 +21,7 @@ import { TopicDetailsComponent } from './topic-details/topic-details.component';
     AddSubjectComponent, 
     SubjectDetailsComponent, 
     AddTeacherComponent, 
-    SubjectTeachersComponent, TopicsComponent, AddTopicComponent, TopicDetailsComponent],
+    SubjectTeachersComponent, TopicsComponent, AddTopicComponent, TopicDetailsComponent, AddExamComponent],
   imports: [
     CommonModule,
     TeacherRoutingModule,

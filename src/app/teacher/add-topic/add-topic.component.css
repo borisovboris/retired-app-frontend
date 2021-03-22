@@ -71,6 +71,7 @@ h1 {
 #back {
     position: relative;
     display: inline-block;
+    white-space : nowrap;
     left: 10%;
     top: 5%;
     color:rgba(0, 76, 86, 0.7);

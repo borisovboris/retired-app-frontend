@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddExamComponent } from './add-exam/add-exam.component';
 import { AddSubjectComponent } from './add-subject/add-subject.component';
 import { AddTeacherComponent } from './add-teacher/add-teacher.component';
 import { AddTopicComponent } from './add-topic/add-topic.component';
@@ -17,6 +18,7 @@ const routes: Routes = [{
     { path: ':id/topics/add-topic', component: AddTopicComponent},
     { path: ':id/topics/:topic-id', component: TopicDetailsComponent},
     { path: ':id/topics', component: TopicsComponent},
+    { path: ':id/add-exam', component: AddExamComponent},
     { path: ':id', component: SubjectDetailsComponent },
     { path: '', component: SubjectsComponent, pathMatch: 'full' }
   ]
