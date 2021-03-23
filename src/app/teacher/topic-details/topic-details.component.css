@@ -62,58 +62,7 @@ nav {
     right: 0;
 }
 
-#question-title {
-    width: 80%;
-}
 
-#add-question-title {
-    margin-bottom: 2rem;
-}
-
-#types {
-    margin: 1rem 0;
-}
-
-#add-question {
-    position: absolute;
-    display: block;
-    bottom: 5%;
-    left: 3rem;
-}
-
-#add-answer {
-    display: block;
-    margin-bottom: 1rem;
-}
-
-#answers-list {
-    margin: 1rem 0rem;
-}
-
-.answer {
-    width: 100%;
-    margin: 1rem 0rem;
-}
-
-
-.answer-text {
-    width: 70%;
-    margin: 0 1rem;
-}
-
-.answer-error {
-    margin-left: 28px;
-}
-
-input {
-    padding: 7px 0;
-    background-color: inherit;
-    border-bottom: 1px var(--sherpa-blue) solid;
-}
-
-.remove-btn {
-    padding: 0.2rem 0.4rem;
-}
 
 #questions-list {  
     margin: 1rem 0rem;
