@@ -57,6 +57,14 @@ main {
 }
 
 .heading {
+    transform: skew(20deg);
+    background-color: red;
+    padding: 0rem 2rem;
+    width: 90%;
+}
+
+.heading p {
+    transform: skew(-20deg);
     color: #E8E8E8;
     font-size: 5rem;
     text-shadow: 1px 1px rgba(0, 0, 0, 0.7);

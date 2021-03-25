@@ -1,0 +1,47 @@
+<ng-container *ngIf="exam$ | async as exam">
+    <div class="wrapper">
+        <nav>
+            <div id="heading-nav">
+                <h2 id="heading"><b>{{exam.name}}</b> - Exam</h2>
+            </div>
+    
+            <div id="button-nav">
+                <button id="teachers" class="hover blue-button" routerLink="add-topic">Add question</button>
+            </div>
+        </nav>
+    
+        <main class="flex-container">
+    
+            <div class="flex-item left">
+                <h3>Choose a topic</h3>
+                <select #select>
+                    <option *ngFor="let topic of topics$ | async" value="{{topic.id}}">{{topic.name}}</option>
+                </select>
+                <button (click)="selectTopic(select.value)">Select</button>
+
+                <ng-container *ngIf="(questions$ | async)?.length!=0; else empty">
+                    <ul>
+                        <li *ngFor="let question of questions$ | async">
+                            {{question.questionTitle}}
+                            <button (click)="addQuestion(question.id)">Add</button>
+                        </li>
+                    </ul>
+                </ng-container>
+
+                <ng-template #empty>
+                    <p>This topic has no questions yet</p>
+                </ng-template>
+            </div>
+    
+            <div class="flex-item right">
+                <h3>Exam questions</h3>
+                <ul>
+                    <li *ngFor="let examQuestion of examQuestions$ | async">
+                        {{examQuestion.questionTitle}}
+                    </li>
+                </ul>
+            </div>
+    
+        </main>
+    </div>
+</ng-container>

@@ -4,6 +4,8 @@ import { AddExamComponent } from './add-exam/add-exam.component';
 import { AddSubjectComponent } from './add-subject/add-subject.component';
 import { AddTeacherComponent } from './add-teacher/add-teacher.component';
 import { AddTopicComponent } from './add-topic/add-topic.component';
+import { ExamDetailsComponent } from './exam-details/exam-details.component';
+import { ExamsComponent } from './exams/exams.component';
 import { SubjectDetailsComponent } from './subject-details/subject-details.component';
 import { SubjectTeachersComponent } from './subject-teachers/subject-teachers.component';
 import { SubjectsComponent } from './subject/subjects.component';
@@ -18,7 +20,9 @@ const routes: Routes = [{
     { path: ':id/topics/add-topic', component: AddTopicComponent},
     { path: ':id/topics/:topic-id', component: TopicDetailsComponent},
     { path: ':id/topics', component: TopicsComponent},
-    { path: ':id/add-exam', component: AddExamComponent},
+    { path: ':id/exams/add-exam', component: AddExamComponent},
+    { path: ':id/exams/:exam-id', component: ExamDetailsComponent},
+    { path: ':id/exams', component: ExamsComponent },
     { path: ':id', component: SubjectDetailsComponent },
     { path: '', component: SubjectsComponent, pathMatch: 'full' }
   ]

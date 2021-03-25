@@ -1,7 +1,7 @@
 <ng-container *ngIf="subject$ | async as subject">
     <div class="wrapper">
 
-        <div id="back" class="hover" routerLink="/subjects/{{subjectId}}">
+        <div id="back" class="hover" routerLink="/subjects/{{subjectId}}/exams">
             <i class="fas fa-chevron-left"></i>
             <p>back to {{subject.name}}</p>
         </div>

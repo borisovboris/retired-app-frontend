@@ -14,6 +14,8 @@ import { TopicDetailsComponent } from './topic-details/topic-details.component';
 import { AddExamComponent } from './add-exam/add-exam.component';
 import { AddQuestionComponent } from './add-question/add-question.component';
 import { QuestionDetailsComponent } from './question-details/question-details.component';
+import { ExamsComponent } from './exams/exams.component';
+import { ExamDetailsComponent } from './exam-details/exam-details.component';
 
 
 @NgModule({
@@ -28,7 +30,7 @@ import { QuestionDetailsComponent } from './question-details/question-details.co
     TopicDetailsComponent, 
     AddExamComponent, 
     AddQuestionComponent, 
-    QuestionDetailsComponent],
+    QuestionDetailsComponent, ExamsComponent, ExamDetailsComponent],
   imports: [
     CommonModule,
     TeacherRoutingModule,

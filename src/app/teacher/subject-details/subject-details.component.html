@@ -8,21 +8,22 @@
             </div>
 
             <div id="button-nav">
-                <button id="add-exam" class="hover blue-button" routerLink="add-exam">Add Exam</button>
+                <button id="topics" class="hover blue-button" routerLink="exams">Exams</button>
                 <button id="topics" class="hover blue-button" routerLink="topics">Topics</button>
                 <button id="teachers" class="hover blue-button" routerLink="teachers">Teachers</button>
+                <button id="teachers" class="hover blue-button" routerLink="students">Students</button>
+                <button id="teachers" class="hover blue-button" routerLink="sessions">Sessions</button>
             </div>
         </nav>
 
         <main>
 
 
-            <h3 id="subheading">Exams</h3>
+            <h3 id="subheading">Subject details</h3>
 
             <div class="flex-container">
-                <div class="flex-item hover" *ngFor="let exam of exams$ | async">
+                <div class="flex-item hover">
                     <h3>
-                        {{exam.name}}
                     </h3>
                 </div>
             </div>

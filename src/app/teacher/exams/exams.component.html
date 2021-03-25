@@ -1,0 +1,29 @@
+<ng-container *ngIf="subject$ | async as subject">
+    <div class="wrapper">
+
+
+        <nav>
+            <div id="heading-nav">
+                <h2 id="heading">{{subject.name | uppercase}}</h2>
+            </div>
+
+            <div id="button-nav">
+                <button id="topics" class="hover blue-button" routerLink="add-exam">Add exam</button>
+            </div>
+        </nav>
+
+        <main>
+
+
+            <h3 id="subheading">Exams</h3>
+
+            <div class="flex-container">
+                <div class="flex-item hover" *ngFor="let exam of exams$ | async" routerLink="{{exam.id}}">
+                    <h3>
+                        {{exam.name}}
+                    </h3>
+                </div>
+            </div>
+        </main>
+    </div>
+</ng-container>
