@@ -5,11 +5,13 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { TeacherLoginComponent } from './teacher-login/teacher-login.component';
 import { TeacherRegisterComponent } from './teacher-register/teacher-register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { StudentLoginComponent } from './student-login/student-login.component';
+import { StudentRegisterComponent } from './student-register/student-register.component';
 
 
 
 @NgModule({
-  declarations: [TeacherLoginComponent, TeacherRegisterComponent],
+  declarations: [TeacherLoginComponent, TeacherRegisterComponent, StudentLoginComponent, StudentRegisterComponent],
   imports: [
     CommonModule,
     AuthRoutingModule,

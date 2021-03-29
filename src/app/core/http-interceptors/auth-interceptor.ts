@@ -16,7 +16,7 @@ export class AuthInterceptor implements HttpInterceptor {
 
         const tokenId = localStorage.getItem("token_id");
         const url = this.router.routerState.snapshot.url
-        const subjectId = url.split('/')[2];
+        const subjectId = url.split('/')[3];
 
         if(tokenId) {
             const cloned = req.clone({

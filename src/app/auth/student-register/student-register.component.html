@@ -2,7 +2,7 @@
 
     <main>
         <form [formGroup]="registerForm" (ngSubmit)="submit()">
-            <h2>Teacher sign up</h2>
+            <h2>Student sign up</h2>
             <div id="inputs">
 
                 <input name="username" formControlName="username" type="text" placeholder="Username"><br>
@@ -14,6 +14,12 @@
                 <input name="email" formControlName="email" type="email" placeholder="Email"><br>
                 <div *ngIf="f.email.invalid && f.email.touched">
                     <div *ngIf="f.email.errors?.required">email is required</div>
+                </div>
+
+                <input name="facultyNumber" formControlName="facultyNumber" type="text" placeholder="Faculty number"><br>
+                <div *ngIf="f.facultyNumber.invalid && f.facultyNumber.touched">
+                    <div *ngIf="f.facultyNumber.errors?.required">faculty number is required</div>
+                    <div *ngIf="f.facultyNumber.errors?.minlength">must be {{f.facultyNumber.errors?.minlength.requiredLength}} characters</div>
                 </div>
 
                 <input name="password" formControlName="password" type="password" placeholder="Password"><br>
@@ -33,6 +39,6 @@
             <button id="sign-up" class="hover form-blue-button" type="submit" [disabled]="this.registerForm.invalid">Sign up</button>
         </form>
 
-        <p id="bottom-text">Already have a teacher account? <span class="hover" routerLink="/auth/teacher-login"><b>Sign in.</b></span></p>
+        <p id="bottom-text">Already have a student account? <span class="hover" routerLink="/auth/student-login"><b>Sign in.</b></span></p>
     </main>
 </div>

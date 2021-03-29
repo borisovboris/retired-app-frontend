@@ -37,7 +37,7 @@ export class AddSubjectComponent implements OnInit {
     }
 
     this.ss.createSubject(subject).subscribe((data) => {
-      this.router.navigate(['/subjects']);
+      this.router.navigate(['/teacher/subjects']);
     });
   }
 

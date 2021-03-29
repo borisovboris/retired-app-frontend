@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/internal/Observable';
 import { SubjectService } from '../services/subject.service';
+import { TeacherService } from '../services/teacher.service';
 
 @Component({
   selector: 'app-subjects',
@@ -13,12 +14,12 @@ export class SubjectsComponent implements OnInit {
   subjects$: Observable<any> | undefined;
 
   constructor(
-    private readonly subjectService: SubjectService,
+    private readonly teacherService: TeacherService,
     private readonly router: Router
     ) { }
 
   ngOnInit(): void {
-    this.subjects$ = this.subjectService.getAllSubjects();
+    this.subjects$ = this.teacherService.getAllSubjects();
   }
   
 

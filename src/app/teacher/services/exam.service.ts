@@ -31,4 +31,8 @@ export class ExamService {
   getExamQuestions(examId: any) {
     return this.http.get<any>(`${this.baseUrl}/exams/${examId}/questions`);
   }
+
+  removeQuestionFromExam(examId: any, questionId: string) {
+    return this.http.delete<any>(`${this.baseUrl}/exams/${examId}/delete-question/${questionId}`);
+  }
 }

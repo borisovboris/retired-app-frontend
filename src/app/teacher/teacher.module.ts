@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { TeacherRoutingModule } from './teacher-routing.module';
-import { SubjectsComponent } from './subject/subjects.component';
+import { SubjectsComponent } from './subjects/subjects.component';
 import { AddSubjectComponent } from './add-subject/add-subject.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SubjectDetailsComponent } from './subject-details/subject-details.component';
@@ -16,6 +16,8 @@ import { AddQuestionComponent } from './add-question/add-question.component';
 import { QuestionDetailsComponent } from './question-details/question-details.component';
 import { ExamsComponent } from './exams/exams.component';
 import { ExamDetailsComponent } from './exam-details/exam-details.component';
+import { StudentsComponent } from './students/students.component';
+import { AddStudentComponent } from './add-student/add-student.component';
 
 
 @NgModule({
@@ -30,7 +32,12 @@ import { ExamDetailsComponent } from './exam-details/exam-details.component';
     TopicDetailsComponent, 
     AddExamComponent, 
     AddQuestionComponent, 
-    QuestionDetailsComponent, ExamsComponent, ExamDetailsComponent],
+    QuestionDetailsComponent, 
+    ExamsComponent, 
+    ExamDetailsComponent, 
+    StudentsComponent,
+    AddStudentComponent
+  ],
   imports: [
     CommonModule,
     TeacherRoutingModule,

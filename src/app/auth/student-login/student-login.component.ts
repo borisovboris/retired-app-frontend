@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { Validators, FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { TeacherService } from 'src/app/teacher/services/teacher.service';
+import { StudentService } from 'src/app/student/services/student.service';
 
 @Component({
-  selector: 'app-teacher-login',
-  templateUrl: './teacher-login.component.html',
-  styleUrls: ['./teacher-login.component.css']
+  selector: 'app-student-login',
+  templateUrl: './student-login.component.html',
+  styleUrls: ['./student-login.component.css']
 })
-export class TeacherLoginComponent implements OnInit {
+export class StudentLoginComponent implements OnInit {
+
   loginForm = this.fb.group({
     username: ['', [Validators.required]],
     password: ['', [Validators.required]]
@@ -16,7 +17,7 @@ export class TeacherLoginComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder, 
-    private teacherService: TeacherService,
+    private studentService: StudentService,
     private router: Router) { }
 
   ngOnInit(): void {
@@ -33,11 +34,11 @@ export class TeacherLoginComponent implements OnInit {
       return;
     }
 
-    this.teacherService.login(username, password).subscribe((data) => {
+    this.studentService.login(username, password).subscribe((data) => {
       localStorage.setItem("token_id", data.token_id);
-      this.router.navigate(['/teacher/subjects']);
+      this.router.navigate(['/student/subjects']);
     }
     );
   }
-  
+
 }

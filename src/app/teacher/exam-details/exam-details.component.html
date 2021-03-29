@@ -22,7 +22,7 @@
                 <ng-container *ngIf="(questions$ | async)?.length!=0; else empty">
                     <ul>
                         <li *ngFor="let question of questions$ | async">
-                            {{question.questionTitle}}
+                            {{question.questionTitle}} ({{question.id}})
                             <button (click)="addQuestion(question.id)">Add</button>
                         </li>
                     </ul>
@@ -37,7 +37,9 @@
                 <h3>Exam questions</h3>
                 <ul>
                     <li *ngFor="let examQuestion of examQuestions$ | async">
-                        {{examQuestion.questionTitle}}
+                        {{examQuestion.questionTitle}} - {{examQuestion.type}}
+                        <p *ngFor="let answer of examQuestion.answers">{{answer.text}}</p>
+                        <button (click)="removeQuestion(examQuestion.id)">Remove</button>
                     </li>
                 </ul>
             </div>

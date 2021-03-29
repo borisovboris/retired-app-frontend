@@ -2,7 +2,7 @@
 
     <main>
         <form [formGroup]="loginForm" (ngSubmit)="submit()">
-            <h2>Teacher sign in</h2>
+            <h2>Student sign in</h2>
             <div id="inputs">
 
                 <input name="username" formControlName="username" type="text" placeholder="Username"><br>
@@ -20,6 +20,6 @@
             <button id="sign-in" class="hover form-blue-button" type="submit" [disabled]="this.loginForm.invalid">Sign in</button>
         </form>
 
-        <p id="bottom-text">Don't have a teacher account? <span class="hover" routerLink="/auth/teacher-register"><b>Sign up.</b></span></p>
+        <p id="bottom-text">Don't have a student account? <span class="hover" routerLink="/auth/student-register"><b>Sign up.</b></span></p>
     </main>
 </div>

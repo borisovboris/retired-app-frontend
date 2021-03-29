@@ -22,10 +22,6 @@ export class SubjectService {
     return subject$;
   }
 
-  getAllSubjects() {
-    return this.http.get(this.baseUrl);
-  }
-
   createSubject(subject: Subject) {
     return this.http.post(this.baseUrl, subject);
   }
