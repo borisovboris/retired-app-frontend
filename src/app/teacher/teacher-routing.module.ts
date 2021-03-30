@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AddExamComponent } from './add-exam/add-exam.component';
 import { AddSubjectComponent } from './add-subject/add-subject.component';
 import { AddTeacherComponent } from './add-teacher/add-teacher.component';
+import { AddTopicComponent } from './add-topic/add-topic.component';
 import { ExamDetailsComponent } from './exam-details/exam-details.component';
 import { ExamsComponent } from './exams/exams.component';
 import { StudentsComponent } from './students/students.component';
@@ -17,6 +18,7 @@ const routes: Routes = [{
     { path: 'add', component: AddSubjectComponent },
     { path: ':id/teachers/add-teacher', component: AddTeacherComponent },
     { path: ':id/teachers', component: SubjectTeachersComponent },
+    { path: ':id/topics/add-topic', component: AddTopicComponent },
     { path: ':id/topics/:topic-id', component: TopicDetailsComponent},
     { path: ':id/topics', component: TopicsComponent},
     { path: ':id/exams/add-exam', component: AddExamComponent},

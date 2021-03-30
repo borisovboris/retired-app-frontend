@@ -1,10 +1,5 @@
 <div class="wrapper">
 
-    <div id="back" class="hover" routerLink="/subjects/{{subjectId}}/topics">
-        <i class="fas fa-chevron-left"></i>
-        <p>topics</p>
-    </div>
-
     <main>
         <form [formGroup]="topicForm" (ngSubmit)="submit()">
             <h1>Create topic</h1>

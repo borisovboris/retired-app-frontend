@@ -11,7 +11,7 @@ import { TeacherService } from '../services/teacher.service';
 })
 export class SubjectsComponent implements OnInit {
 
-  subjects$: Observable<any> | undefined;
+  subjects$!: Observable<any>;
 
   constructor(
     private readonly teacherService: TeacherService,

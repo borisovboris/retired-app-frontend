@@ -1,1 +1,7 @@
-<p>subject-list works!</p>
+<div class="flex-container">
+    <div class="flex-item hover" *ngFor="let subject of subjects$ | async" routerLink="{{subject.id}}">
+        <h3>
+            {{ subject.name }}
+        </h3>
+    </div>
+</div>

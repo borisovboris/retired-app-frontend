@@ -37,5 +37,9 @@ export class SubjectService {
   getSubjectTopics(subjectId: any) {
     return this.http.get(this.baseUrl + '/' + subjectId + '/topics');
   }
+
+  getSubjectStudents(subjectId: any) {
+    return this.http.get(this.baseUrl + '/' + subjectId + '/students');
+  }
   
 }

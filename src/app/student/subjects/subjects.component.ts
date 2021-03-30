@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { StudentService } from '../services/student.service';
 
 @Component({
   selector: 'app-subjects',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./subjects.component.css']
 })
 export class SubjectsComponent implements OnInit {
+  subjects$!: Observable<any>;
 
-  constructor() { }
+  constructor
+  (
+    private readonly studentService: StudentService
+  ) {}
 
   ngOnInit(): void {
+    this.subjects$ = this.studentService.getSubjects();
   }
 
 }

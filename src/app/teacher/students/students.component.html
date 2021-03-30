@@ -1,9 +1,9 @@
-<ng-container>
+<ng-container *ngIf="subject$ | async as subject">
 
     <div class="wrapper">
         <nav>
             <div id="heading-nav">
-                <h2 id="heading"> Subject name students </h2>
+                <h2 id="heading"> {{subject.name | uppercase}} - students </h2>
             </div>
 
             <div id="button-nav">
@@ -14,7 +14,12 @@
         <main class="flex-container">
 
             <div class="flex-item left">
-
+                <ul>
+                    <li *ngFor="let student of students$ | async">
+                        {{student.email}}@outlook.com
+                        {{student.facultyNumber}}
+                    </li>
+                </ul>
             </div>
 
             <div class="flex-item right">
