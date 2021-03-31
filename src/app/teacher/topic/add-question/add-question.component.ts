@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormArray, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { QuestionService } from '../services/question.service';
+import { QuestionService } from '../../services/question.service';
 
 @Component({
   selector: 'app-add-question',

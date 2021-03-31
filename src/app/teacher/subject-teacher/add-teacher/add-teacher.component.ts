@@ -2,7 +2,7 @@ import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } fr
 import { ActivatedRoute, Router } from '@angular/router';
 import { fromEvent, Observable, of, Subject, Subscription } from 'rxjs';
 import { debounceTime, distinctUntilChanged, filter, tap } from 'rxjs/operators';
-import { TeacherService } from '../services/teacher.service';
+import { TeacherService } from '../../services/teacher.service';
 
 @Component({
   selector: 'app-add-teacher',

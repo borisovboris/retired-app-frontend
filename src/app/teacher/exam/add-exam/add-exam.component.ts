@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { ExamService } from '../services/exam.service';
-import { SubjectService } from '../services/subject.service';
+import { ExamService } from '../../services/exam.service';
+import { SubjectService } from '../../services/subject.service';
 
 @Component({
   selector: 'app-add-exam',
@@ -45,7 +45,7 @@ export class AddExamComponent implements OnInit {
     const { name } = this.examForm.value;
 
     this.examService.createExam(name).subscribe(() => {
-      console.log('exam sent');
+      this.router.navigate([`/teacher/subjects/${this.subjectId}/exams`]);
     });
   }
 

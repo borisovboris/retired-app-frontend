@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, pipe } from 'rxjs';
 import { tap } from 'rxjs/operators';
-import { ExamService } from '../services/exam.service';
-import { SubjectService } from '../services/subject.service';
-import { TopicService } from '../services/topic.service';
+import { ExamService } from '../../services/exam.service';
+import { SubjectService } from '../../services/subject.service';
+import { TopicService } from '../../services/topic.service';
 
 @Component({
   selector: 'app-exam-details',

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { SubjectService } from '../services/subject.service';
-import { TopicService } from '../services/topic.service';
+import { SubjectService } from '../../services/subject.service';
+import { TopicService } from '../../services/topic.service';
 
 @Component({
   selector: 'app-topics',

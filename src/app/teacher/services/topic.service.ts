@@ -1,13 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { AppSettings } from 'src/app/core/app-settings';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TopicService {
 
-  readonly baseUrl = "http://localhost:3000";
+  private readonly baseUrl: string = AppSettings.API_ENDPOINT;;
 
   constructor(
     private readonly http: HttpClient

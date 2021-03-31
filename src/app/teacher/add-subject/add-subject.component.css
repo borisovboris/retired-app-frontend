@@ -68,29 +68,3 @@ h1 {
     cursor: not-allowed;
 }
 
-#back {
-    position: relative;
-    display: inline-block;
-    white-space : nowrap;
-    left: 10%;
-    top: 5%;
-    color:rgba(0, 76, 86, 0.7);
-}
-
-#back i {
-    font-size: 2rem;
-    font-weight: 700;
-}
-
-#back:hover {
-    color:rgba(0, 76, 86, 0.9);;
-}
-
-#back p {
-    padding-left: 0.7rem;
-    display: inline-block;
-    position: absolute;
-    font-size: 1.5rem;
-    top: 47%;
-    transform: translateY(-50%);
-}

@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { SubjectService } from '../services/subject.service';
+import { SubjectService } from '../../services/subject.service';
 
 @Component({
-  selector: 'app-subject-teachers',
-  templateUrl: './subject-teachers.component.html',
-  styleUrls: ['./subject-teachers.component.css']
+  selector: 'app-teachers',
+  templateUrl: './teachers.component.html',
+  styleUrls: ['./teachers.component.css']
 })
-export class SubjectTeachersComponent implements OnInit {
+export class TeachersComponent implements OnInit {
   subject$: Observable<any>;
   subjectTeachers$: Observable<any>;
   

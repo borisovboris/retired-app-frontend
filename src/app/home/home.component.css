@@ -1,7 +1,6 @@
 nav {
     background-color: transparent;
     padding: 1.2rem 2rem;
-    margin: 0.2rem 0.2rem;
     border-radius: 20px;
     border: solid rgba(255, 255, 255, 0.7) 1px;
     overflow: auto;
@@ -23,14 +22,10 @@ nav {
 }
 
 .wrapper {
-    /* background-color: #eef3d2;
-    background-image: linear-gradient(135deg, #eef3d2 21%, #f75c57 78%); */
-    /* background-image: url('../../assets/images/laptop.jpg');
+    background-image: url('../../assets/images/bench-accounting.jpg');
     background-position: center; 
     background-repeat: no-repeat;
-    background-size: cover; */
-    background-color: #f5d358;
-    background-image: linear-gradient(90deg, #f5d358 0%, #ff9f6a 100%);
+    background-size: cover; 
     min-height: 100vh;
 }
 

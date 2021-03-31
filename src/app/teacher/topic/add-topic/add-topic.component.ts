@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { TopicService } from '../services/topic.service';
+import { TopicService } from '../../services/topic.service';
 
 @Component({
   selector: 'app-add-topic',

@@ -1,12 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { AppSettings } from 'src/app/core/app-settings';
 
 @Injectable({
   providedIn: 'root'
 })
 export class QuestionService {
-  readonly baseUrl = "http://localhost:3000";
+  private readonly baseUrl: string = AppSettings.API_ENDPOINT;
 
   constructor
   (
@@ -14,11 +15,12 @@ export class QuestionService {
   ) { }
 
   createQuestion(question: any) {
-    return this.http.post(`${this.baseUrl}/questions`, question);
+    //topicId included in question object
+    return this.http.post(`${this.baseUrl}questions`, question);
   }
 
   getQuestionAnswers(questionId: number) {
-    return this.http.get(`${this.baseUrl}/questions/answers/${questionId}`);
+    return this.http.get(`${this.baseUrl}questions/answers/${questionId}`);
   }
 
 }

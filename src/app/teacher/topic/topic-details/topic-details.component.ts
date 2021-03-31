@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { QuestionService } from '../services/question.service';
-import { TopicService } from '../services/topic.service';
+import { QuestionService } from '../../services/question.service';
+import { TopicService } from '../../services/topic.service';
 
 @Component({
   selector: 'app-topic-details',

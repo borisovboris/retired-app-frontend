@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { SubjectService } from '../services/subject.service';
+import { SubjectService } from '../../services/subject.service';
 
 @Component({
   selector: 'app-students',
