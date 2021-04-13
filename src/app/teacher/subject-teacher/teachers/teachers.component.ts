@@ -11,17 +11,24 @@ import { SubjectService } from '../../services/subject.service';
 export class TeachersComponent implements OnInit {
   subject$: Observable<any>;
   subjectTeachers$: Observable<any>;
+  subjectId: string | null;
   
   constructor(
     private readonly route: ActivatedRoute,
     private readonly subjectService: SubjectService,
     ) { 
-      const subjectId = this.route.snapshot.paramMap.get('id');
-      this.subject$ = this.subjectService.getSubject(subjectId);
-      this.subjectTeachers$ = this.subjectService.getSubjectTeachers(subjectId);
+      this.subjectId = this.route.snapshot.paramMap.get('id');
+      this.subject$ = this.subjectService.getSubject(this.subjectId);
+      this.subjectTeachers$ = this.subjectService.getSubjectTeachers(this.subjectId);
   }
 
   ngOnInit(): void {
+  }
+
+  removeTeacherFromSubject(teacherId: any) {
+    this.subjectService.removeTeacherFromSubject(teacherId, this.subjectId).subscribe((data) => {
+      this.subjectTeachers$ = this.subjectService.getSubjectTeachers(this.subjectId);
+    });
   }
 
 }

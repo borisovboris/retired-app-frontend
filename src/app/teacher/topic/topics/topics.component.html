@@ -6,9 +6,6 @@
                 <h2 id="heading"> {{ subject.name | uppercase }} - Topics </h2>
             </div>
 
-            <div id="button-nav">
-                <button id="teachers" class="hover blue-button" routerLink="add-topic">Add topic</button>
-            </div>
         </nav>
 
         <main>
@@ -16,6 +13,12 @@
             <h3 id="subheading">Topics</h3>
 
             <div class="flex-container">
+                <div class="flex-item hover" id="add-topic" routerLink="add">
+                    <h3>
+                        <i class="fas fa-plus"></i>
+                    </h3>
+                </div>
+
                 <div class="flex-item hover" *ngFor="let topic of topics$ | async" routerLink="{{topic.id}}">
                     <h3>
                         {{ topic.name }}

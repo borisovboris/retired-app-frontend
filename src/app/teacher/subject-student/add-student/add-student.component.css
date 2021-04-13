@@ -1,0 +1,26 @@
+#cancel { 
+    margin: 0.7rem 0rem;
+}
+
+#student-list {
+    list-style: none;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+#student-list li {
+    padding: 0.3rem 0.5rem;
+}
+
+#student-list li:nth-child(odd){background-color: #F0F0F0;}
+
+#add {
+    margin-top: 1rem;
+}
+
+#selected-student {
+    border-radius: 20px;
+    padding: 0.5rem;
+    margin: 1rem 0;
+    width: 70%;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 2px 5px 0 rgba(0, 0, 0, 0.19);
+}

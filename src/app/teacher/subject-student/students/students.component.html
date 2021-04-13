@@ -5,27 +5,36 @@
             <div id="heading-nav">
                 <h2 id="heading"> {{subject.name | uppercase}} - students </h2>
             </div>
-
-            <div id="button-nav">
-                <button id="teachers" class="hover blue-button" routerLink="add-topic">Add question</button>
-            </div>
         </nav>
 
-        <main class="flex-container">
+        <div class="flex-container">
 
             <div class="flex-item left">
-                <ul>
-                    <li *ngFor="let student of students$ | async">
-                        {{student.email}}@outlook.com
-                        {{student.facultyNumber}}
-                    </li>
-                </ul>
+
+                <table id="student-table">
+                    <tr>
+                        <th>Email</th>
+                        <th>Faculty number</th>
+                        <th>Action</th>
+                    </tr>
+                    <ng-container *ngIf="(students$ | async)?.length; else empty">
+                        <tr *ngFor="let student of students$ | async">
+                            <td>{{student.email}}</td>
+                            <td>{{student.facultyNumber}}</td>
+                            <td (click)="removeStudent(student.id)">Remove</td>
+                        </tr>
+                    </ng-container>
+                </table>
+
+                <ng-template #empty>
+                    <p id="empty"><i>No students have been added yet</i></p>
+                </ng-template>
             </div>
 
             <div class="flex-item right">
-                <app-add-student></app-add-student>
+                <app-add-student (newStudentEvent)="refreshStudents()"></app-add-student>
             </div>
 
-        </main>
+        </div>
     </div>
 </ng-container>

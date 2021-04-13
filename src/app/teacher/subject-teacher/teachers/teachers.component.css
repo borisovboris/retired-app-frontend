@@ -32,19 +32,34 @@ nav {
     margin-right: 1rem;
 }
 
+
 main {
-    /* padding-left: 6rem;
-    padding-right: 6rem; */
     padding-top: 8rem;
-    padding-bottom: 3rem;
 }
 
 
-
-#subheading {
-    margin-top: 10px;
+#teacher-table {  
+    margin: 1rem 0rem;
+    border-collapse: collapse;
+    width: 100%;
 }
-
+  
+  #teacher-table td, #teacher-table th {
+    border-bottom: 1px solid var(--sherpa-blue);
+    padding: 8px;
+  }
+  
+  #teacher-table tr:hover {
+       background-color: #ddd;
+       cursor: pointer;
+    }
+  
+  #teacher-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    font-weight: 900;
+  }
 
 
 

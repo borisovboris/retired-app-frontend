@@ -19,7 +19,7 @@ export class AddSubjectComponent implements OnInit {
 
   constructor(
     private readonly fb: FormBuilder,
-    private readonly ss: SubjectService,
+    private readonly subjectService: SubjectService,
     private readonly router: Router
     ) { }
 
@@ -36,7 +36,7 @@ export class AddSubjectComponent implements OnInit {
       subject.description = "This subject doesn't have a description yet.";
     }
 
-    this.ss.createSubject(subject).subscribe((data) => {
+    this.subjectService.createSubject(subject).subscribe((data) => {
       this.router.navigate(['/teacher/subjects']);
     });
   }

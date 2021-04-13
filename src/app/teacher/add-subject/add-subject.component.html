@@ -1,6 +1,6 @@
 <div class="wrapper">
 
-    <main>
+    <div class="center-form">
         <form [formGroup]="subjectForm" (ngSubmit)="submit()">
             <h1>Create subject</h1>
             <div id="inputs">
@@ -18,5 +18,5 @@
 
             <button id="create" class="hover" type="submit" [disabled]="this.subjectForm.invalid">Create</button>
         </form>
-    </main>
+    </div>
 </div>

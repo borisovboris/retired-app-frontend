@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { fromEvent, Observable, Subscription } from 'rxjs';
 import { debounceTime, distinctUntilChanged, filter, tap } from 'rxjs/operators';
@@ -18,6 +18,8 @@ export class AddStudentComponent implements OnInit {
   subjectId!: string | null;
   selectedStudent: any | null;
   errorMessage!: string | null;
+  @Output() newStudentEvent = new EventEmitter<void>();
+
 
   constructor(
     private readonly studentService: StudentService,
@@ -59,7 +61,7 @@ export class AddStudentComponent implements OnInit {
     this.selectedStudent = null;
   }
 
-  submit() {
+  submitStudent() {
 
     if(!this.selectedStudent) { 
       this.errorMessage = 'a student must be selected';
@@ -67,7 +69,8 @@ export class AddStudentComponent implements OnInit {
     }
 
     this.studentService.addStudentToSubject(this.selectedStudent.id, this.subjectId).subscribe(data => {
-      this.router.navigate([`/subjects/${this.subjectId}/teachers/`]);
+      this.selectedStudent = null;
+      this.newStudentEvent.emit();
     });
 
   }

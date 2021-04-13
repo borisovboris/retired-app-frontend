@@ -18,15 +18,6 @@ nav {
     display: inline-block;
 }
 
-#button-nav {
-    background-color: #E8E8E8;
-    padding: 0.8rem 6rem;
-}
-
-#button-nav button {
-    margin-right: 1rem;
-}
-
 #subheading {
     margin-top: 10px;
 }
@@ -37,7 +28,7 @@ nav {
 
 .flex-item {
     height: 100vh;
-    padding-top: 8rem;
+    padding-top: 6rem;
     padding-left: 3rem;
     padding-right: 3rem;
     /* -2rem because theres a margin of 1 rem on each side of every flex item*/
@@ -53,4 +44,29 @@ nav {
 .flex-item.right {
     width: 60%;
     background-color: #E8E8E8;
+}
+
+#topic-select {
+    width: 60%;
+    padding: 0.4rem 0;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+}
+
+.list {
+    list-style: none;
+}
+
+.list li {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.list li p{ 
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+.subheading {
+    margin-bottom: 1rem;
 }

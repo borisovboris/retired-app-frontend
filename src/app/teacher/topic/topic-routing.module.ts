@@ -9,7 +9,7 @@ import { TopicsComponent } from './topics/topics.component';
 
 const routes: Routes = [
   { path: '', children: [
-    { path: 'add-topic', component: AddTopicComponent },
+    { path: 'add', component: AddTopicComponent },
     { path: ':topic-id', component: TopicDetailsComponent },
     { path: '', component: TopicsComponent, pathMatch: 'full'},
   ]}

@@ -11,7 +11,7 @@ import { ExamsComponent } from './exams/exams.component';
 
 const routes: Routes = [
   {path: '', children: [
-    { path: ':add-exam', component: AddExamComponent },
+    { path: 'add', component: AddExamComponent },
     { path: ':exam-id', component: ExamDetailsComponent },
     { path: '', component: ExamsComponent, pathMatch: 'full' }
   ]}

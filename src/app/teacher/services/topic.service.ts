@@ -15,18 +15,18 @@ export class TopicService {
   ) { }
 
   createTopic(name: string, subjectId: any): Observable<any> {
-    return this.http.post(`${this.baseUrl}/topics/add`, { name, subjectId })
+    return this.http.post(`${this.baseUrl}topics/add`, { name, subjectId })
   }
 
   getTopicsOfSubject(subjectId: any) {
-    return this.http.get(`${this.baseUrl}/topics/${subjectId}`);
+    return this.http.get(`${this.baseUrl}topics/${subjectId}`);
   }
 
   getTopics(topicId: any) {
-    return this.http.get(`${this.baseUrl}/topics/details/${topicId}`);
+    return this.http.get(`${this.baseUrl}topics/details/${topicId}`);
   }
 
   getTopicQuestions(topicId: any) {
-    return this.http.get(`${this.baseUrl}/topics/${topicId}/questions`)
+    return this.http.get(`${this.baseUrl}topics/${topicId}/questions`)
   }
 }

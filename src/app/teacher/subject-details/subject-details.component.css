@@ -32,15 +32,6 @@ nav {
     margin-right: 1rem;
 }
 
-main {
-    padding-left: 6rem;
-    padding-right: 6rem;
-    padding-top: 8rem;
-    padding-bottom: 3rem;
-}
-
-
-
 #subheading {
     margin-top: 10px;
 }
@@ -70,6 +61,15 @@ main {
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+}
+
+main {
+    padding-top: 8rem;
+}
+
+main * {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 

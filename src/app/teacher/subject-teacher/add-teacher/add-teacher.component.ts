@@ -2,6 +2,7 @@ import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } fr
 import { ActivatedRoute, Router } from '@angular/router';
 import { fromEvent, Observable, of, Subject, Subscription } from 'rxjs';
 import { debounceTime, distinctUntilChanged, filter, tap } from 'rxjs/operators';
+import { SubjectService } from '../../services/subject.service';
 import { TeacherService } from '../../services/teacher.service';
 
 @Component({
@@ -19,6 +20,7 @@ export class AddTeacherComponent implements OnInit, AfterViewInit, OnDestroy {
   errorMessage!: string | null;
 
   constructor(
+    private readonly subjectService: SubjectService,
     private readonly teacherService: TeacherService,
     private readonly route: ActivatedRoute,
     private readonly router: Router
@@ -58,15 +60,15 @@ export class AddTeacherComponent implements OnInit, AfterViewInit, OnDestroy {
     this.selectedTeacher = null;
   }
 
-  submit() {
+  submitTeacher() {
 
     if(!this.selectedTeacher) { 
       this.errorMessage = 'a teacher must be selected';
       return;
     }
 
-    this.teacherService.addTeacherToSubject(this.selectedTeacher.id, this.subjectId).subscribe(data => {
-      this.router.navigate([`/subjects/${this.subjectId}/teachers/`]);
+    this.subjectService.addTeacherToSubject(this.selectedTeacher.id, this.subjectId).subscribe(data => {
+      this.router.navigate([`/teacher/subjects/${this.subjectId}/teachers/`]);
     });
 
   }

@@ -1,13 +1,13 @@
 <div class="wrapper">
 
-    <main>
+    <div class="center-form">
         <form>
             <h1>Add teacher</h1>
             <div id="inputs">
 
                 <div [hidden]="selectedTeacher">
                     <input placeholder="Search by username or email" #input>
-    
+
                     <ul id="teachers-list">
                         <ng-container *ngFor="let teacher of teachers$ | async">
                             <li class="hover" (click)="selectTeacher(teacher)">
@@ -18,17 +18,19 @@
                     </ul>
                 </div>
 
-                <div *ngIf="selectedTeacher" id="selected-teacher">
-                    <p>{{selectedTeacher.username}}</p>
-                    <p>{{selectedTeacher.email}}@outlook.com</p>
-                    <button id="cancel" class="hover" (click)="deselectTeacher()">Cancel</button>
+                <div *ngIf="selectedTeacher">
+                    <div id="selected-teacher">
+                        <p>{{selectedTeacher.username}}</p>
+                        <p>{{selectedTeacher.email}}@outlook.com</p>
+                    </div>
+                    <button id="cancel" class="hover white-button" (click)="deselectTeacher()">Cancel</button>
                 </div>
 
                 <p *ngIf="errorMessage">{{errorMessage}}</p>
 
             </div>
 
-            <button id="add" class="hover" type="submit" [disabled] (click)="submit()">Add</button>
+            <button id="add" class="hover" type="button" (click)="submitTeacher()">Add</button>
         </form>
-    </main>
+    </div>
 </div>

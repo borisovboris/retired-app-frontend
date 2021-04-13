@@ -3,21 +3,17 @@
     <div class="wrapper">
         <nav>
             <div id="heading-nav">
-                <h2 id="heading"> {{ topic.name | uppercase }} Topic - Questions </h2>
-            </div>
-
-            <div id="button-nav">
-                <button id="teachers" class="hover blue-button" routerLink="add-topic">Add question</button>
+                <h2 id="heading"> {{ topic.name | uppercase }} topic  </h2>
             </div>
         </nav>
 
-        <main class="flex-container">
+        <div class="flex-container">
 
             <div class="flex-item left">
                 <h3>Questions</h3>
 
 
-                <table id="questions-list">
+                <table id="question-table">
                     <tr>
                         <th>Title</th>
                         <th>Type</th>
@@ -45,6 +41,6 @@
                 </app-question-details>
             </div>
 
-        </main>
+        </div>
     </div>
 </ng-container>

@@ -13,11 +13,20 @@
 
         <main>
 
-            <h3 id="subheading"> {{subject.name | uppercase }} teachers</h3>
-
-            <ul>
-                <li *ngFor="let subjectTeacher of subjectTeachers$ | async">{{subjectTeacher | json}}</li>
-            </ul>
+            <table id="teacher-table">
+                <tr>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Action</th>
+                </tr>
+                <ng-container *ngIf="(subjectTeachers$ | async)?.length">
+                    <tr *ngFor="let subjectTeacher of subjectTeachers$ | async">
+                        <td>{{subjectTeacher.username}}</td>
+                        <td>{{subjectTeacher.email}}</td>
+                        <td (click)="removeTeacherFromSubject(subjectTeacher.id)">Remove</td>
+                    </tr>
+                </ng-container>
+            </table>
 
         </main>
     </div>

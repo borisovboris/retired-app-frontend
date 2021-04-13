@@ -24,15 +24,6 @@ nav {
     display: inline-block;
 }
 
-#button-nav {
-    background-color: #E8E8E8;
-    padding: 0.8rem 6rem;
-}
-
-#button-nav button {
-    margin-right: 1rem;
-}
-
 #subheading {
     margin-top: 10px;
 }
@@ -62,23 +53,23 @@ nav {
     right: 0;
 }
 
-#questions-list {  
+#question-table {  
     margin: 1rem 0rem;
     border-collapse: collapse;
     width: 100%;
 }
   
-  #questions-list td, #questions-list th {
+  #question-table td, #question-table th {
     border-bottom: 1px solid var(--sherpa-blue);
     padding: 8px;
   }
   
-  #questions-list tr:hover {
+  #question-table tr:hover {
        background-color: #ddd;
        cursor: pointer;
     }
   
-  #questions-list th {
+  #question-table th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;

@@ -23,24 +23,6 @@ nav {
     display: inline-block;
 }
 
-#button-nav {
-    background-color: #E8E8E8;
-    padding: 0.8rem 6rem;
-}
-
-#button-nav button {
-    margin-right: 1rem;
-}
-
-main {
-    padding-left: 6rem;
-    padding-right: 6rem;
-    padding-top: 8rem;
-    padding-bottom: 3rem;
-}
-
-
-
 #subheading {
     margin-top: 10px;
 }
@@ -56,11 +38,15 @@ main {
     /* -2rem because theres a margin of 1 rem on each side of every flex item*/
     background-color: #337575;
     color: white;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 2px 5px 0 rgba(0, 0, 0, 0.19);
     border-radius: 4px;
     margin: 1rem;
     min-height: 12rem;
     position: relative;
+}
+
+.flex-item:hover {
+    background-color: #004242;
 }
 
 .flex-item h3 {
@@ -70,6 +56,14 @@ main {
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+}
+
+#add-exam i {
+    font-size: 2rem;
+}
+
+#add-exam {
+    opacity: 0.8;
 }
 
 

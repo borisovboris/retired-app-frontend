@@ -1,7 +1,7 @@
 <div class="form-wrapper">
 
-    <main>
-        <form [formGroup]="registerForm" (ngSubmit)="submit()">
+    <div class="center-form">
+        <form [formGroup]="registerForm" (ngSubmit)="submit()" class="auth-form">
             <h2>Teacher sign up</h2>
             <div id="inputs">
 
@@ -34,5 +34,5 @@
         </form>
 
         <p id="bottom-text">Already have a teacher account? <span class="hover" routerLink="/auth/teacher-login"><b>Sign in.</b></span></p>
-    </main>
+    </div>
 </div>

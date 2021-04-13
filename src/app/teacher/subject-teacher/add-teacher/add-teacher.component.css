@@ -66,33 +66,6 @@ h1 {
     cursor: not-allowed;
 }
 
-#back {
-    position: relative;
-    display: inline-block;
-    white-space : nowrap;
-    left: 10%;
-    top: 5%;
-    color:rgba(0, 76, 86, 0.7);
-}
-
-#back i {
-    font-size: 2rem;
-    font-weight: 700;
-}
-
-#back:hover {
-    color:rgba(0, 76, 86, 0.9);;
-}
-
-#back p {
-    padding-left: 0.7rem;
-    display: inline-block;
-    position: absolute;
-    font-size: 1.5rem;
-    top: 47%;
-    transform: translateY(-50%);
-}
-
 #teachers-list {
     list-style: none;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
@@ -105,12 +78,14 @@ h1 {
 #teachers-list li:nth-child(odd){background-color: #F0F0F0;}
 
 #cancel { 
-    color: var(--sherpa-blue);
-    border: var(--sherpa-blue) 1px solid;
-    background-color: whitesmoke;
-    border-radius: 20px;
-    font-weight: bold;
-    padding: 0.5rem 0.8rem;
     margin: 0.7rem 0rem;
+}
+
+#selected-teacher {
+    border-radius: 20px;
+    padding: 0.5rem;
+    margin: 1rem 0;
+    width: 70%;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 2px 5px 0 rgba(0, 0, 0, 0.19);
 }
 

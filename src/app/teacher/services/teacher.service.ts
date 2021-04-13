@@ -26,10 +26,6 @@ export class TeacherService {
     return this.http.get<any>(`${this.baseUrl}teachers/search/` + criteria);
   }
 
-  addTeacherToSubject(teacherId: number, subjectId: any) {
-    return this.http.post<any>(`${this.baseUrl}teachers/add-teacher-to-subject`, { teacherId, subjectId});
-  }
-
   getAllSubjects() {
     return this.http.get(`${this.baseUrl}teachers/subjects`);
   }

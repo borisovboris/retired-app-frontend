@@ -23,24 +23,6 @@ nav {
     display: inline-block;
 }
 
-#button-nav {
-    background-color: #E8E8E8;
-    padding: 0.8rem 6rem;
-}
-
-#button-nav button {
-    margin-right: 1rem;
-}
-
-main {
-    padding-left: 6rem;
-    padding-right: 6rem;
-    padding-top: 10rem;
-    padding-bottom: 3rem;
-}
-
-
-
 #subheading {
     margin-top: 10px;
 }
@@ -54,14 +36,17 @@ main {
 .flex-item {
     width: calc(20% - 2rem);
     /* -2rem because theres a margin of 1 rem on each side of every flex item*/
-    background-color: #5C9191;
-    /* background-image: linear-gradient(160deg, #fc0373 0%, #f04dae 100%); */
+    background-color: #5C8686;
     color: white;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 2px 5px 0 rgba(0, 0, 0, 0.19);
     border-radius: 4px;
     margin: 1rem;
     min-height: 12rem;
     position: relative;
+}
+
+.flex-item:hover {
+    background-color: #336868;
 }
 
 .flex-item h3 {
@@ -71,6 +56,14 @@ main {
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+}
+
+#add-topic i {
+    font-size: 2rem;
+}
+
+#add-topic {
+    opacity: 0.7;
 }
 
 

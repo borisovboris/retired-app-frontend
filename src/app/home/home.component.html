@@ -1,16 +1,27 @@
-<div class="wrapper">  
+<div class="wrapper">
     <nav>
         <div id="button-section">
-            <button class="hover" routerLink = "/auth/teacher-login">Teacher login</button>
-            <button class="hover" routerLink = "/auth/teacher-register">Teacher register</button>
-            <button class="hover" routerLink = "/auth/student-login">Student login</button>
-            <button class="hover" routerLink = "/auth/student-register">Student register</button>
+            <button class="hover" routerLink="/auth/teacher-login">Teacher login</button>
+            <button class="hover" routerLink="/auth/student-login">Student login</button>
         </div>
     </nav>
 
-    <main>
-      
-    </main>
+    <div class="flex-container">
+        <div class="flex-item left">
+            <div class="box">
+                <h2>Build exams with ease and connect with your students online</h2>
+                <button id="register-teacher-btn" class="hover register-btn" routerLink="/auth/teacher-register">
+                    Register as teacher
+                </button>
+            </div>
+        </div>
+        <div class="flex-item right">
+            <div class="box">
+                <h2>Sign up now and ace all of your exams online</h2>
+                <button id="register-student-btn" class="hover register-btn" routerLink="/auth/student-register">
+                    Register as student
+                </button>
+            </div>
+        </div>
+    </div>
 </div>
-
-

@@ -18,7 +18,7 @@ export class SubjectService {
     ) {}
 
   createSubject(subject: Subject) {
-    return this.http.post(this.baseUrl, subject);
+    return this.http.post(`${this.baseUrl}subjects`, subject);
   }
 
   getSubject(subjectId: any) {
@@ -31,6 +31,14 @@ export class SubjectService {
 
   getSubjectTopics(subjectId: any) {
     return this.http.get(`${this.baseUrl}subjects/${subjectId}/topics`);
+  }
+
+  addTeacherToSubject(teacherId: number, subjectId: any) {
+    return this.http.post<any>(`${this.baseUrl}subjects/add-teacher-to-subject`, { teacherId, subjectId});
+  }
+
+  removeTeacherFromSubject(teacherId: any, subjectId: any) {
+    return this.http.delete(`${this.baseUrl}subjects/${subjectId}/remove-teacher-from-subject/${teacherId}`);
   }
 
   getSubjectStudents(subjectId: any) {

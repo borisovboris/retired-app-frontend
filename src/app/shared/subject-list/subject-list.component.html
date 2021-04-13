@@ -1,4 +1,11 @@
 <div class="flex-container">
+
+    <div class="flex-item hover" id="add-subject" routerLink="add">
+        <h3>
+            <i class="fas fa-plus"></i>
+        </h3>
+    </div>
+
     <div class="flex-item hover" *ngFor="let subject of subjects$ | async" routerLink="{{subject.id}}">
         <h3>
             {{ subject.name }}

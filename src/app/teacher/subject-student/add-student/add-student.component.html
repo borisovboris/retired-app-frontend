@@ -1,6 +1,5 @@
 <div class="wrapper">
 
-    <main>
         <form>
             <h1>Add student</h1>
             <div id="inputs">
@@ -8,7 +7,7 @@
                 <div [hidden]="selectedStudent">
                     <input placeholder="Search by email or faculty number" #input>
     
-                    <ul id="students-list">
+                    <ul id="student-list">
                         <ng-container *ngFor="let student of students$ | async">
                             <li class="hover" (click)="selectStudent(student)">
                                 <div>{{student.email}}@outlook.com</div>
@@ -18,17 +17,18 @@
                     </ul>
                 </div>
 
-                <div *ngIf="selectedStudent" id="selected-student">
-                    <p>{{selectedStudent.username}}</p>
-                    <p>{{selectedStudent.email}}@outlook.com</p>
-                    <button id="cancel" class="hover" (click)="deselectStudent()">Cancel</button>
+                <div *ngIf="selectedStudent">
+                    <div id="selected-student">
+                        <p>{{selectedStudent.username}}</p>
+                        <p>{{selectedStudent.email}}@outlook.com</p>
+                    </div>
+                    <button id="cancel" class="hover white-button" (click)="deselectStudent()">Cancel</button>
                 </div>
 
                 <p *ngIf="errorMessage">{{errorMessage}}</p>
 
             </div>
 
-            <button id="add" class="hover" type="submit" [disabled] (click)="submit()">Add</button>
+            <button id="add" class="hover blue-button" type="button" (click)="submitStudent()">Add</button>
         </form>
-    </main>
 </div>

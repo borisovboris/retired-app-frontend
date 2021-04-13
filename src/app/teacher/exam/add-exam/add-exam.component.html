@@ -1,7 +1,7 @@
 <ng-container *ngIf="subject$ | async as subject">
     <div class="wrapper">
 
-        <main>
+        <div class="center-form">
             <form [formGroup]="examForm" (ngSubmit)="submit()">
                 <h1>Create exam</h1>
                 <div id="inputs">
@@ -14,6 +14,6 @@
 
                 <button id="create" class="hover" type="submit" [disabled]="this.examForm.invalid">Create</button>
             </form>
-        </main>
+        </div>
     </div>
 </ng-container>

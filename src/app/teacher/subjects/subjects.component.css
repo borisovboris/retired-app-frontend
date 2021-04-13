@@ -12,13 +12,6 @@ nav {
     width: 100%;
 }
 
-main {
-    padding-left: 6rem;
-    padding-right: 6rem;
-    padding-top: 6rem;
-    padding-bottom: 3rem;
-}
-
 #log-out {
     color: var(--sherpa-blue);
     border-radius: 4px;

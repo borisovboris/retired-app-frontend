@@ -61,3 +61,29 @@ nav {
     overflow-y: auto;
     right: 0;
 }
+
+#student-table {  
+    border-collapse: collapse;
+    width: 100%;
+}
+  
+#student-table td, #student-table th {
+    border-bottom: 1px solid var(--sherpa-blue);
+    padding: 8px;
+  }
+  
+#student-table tr:hover {
+       background-color: #ddd;
+       cursor: pointer;
+    }
+  
+#student-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    font-weight: 900;
+  }
+
+#empty {
+    margin-top: 1rem;
+}

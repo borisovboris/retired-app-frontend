@@ -38,7 +38,7 @@ export class AddTopicComponent implements OnInit {
     const { name } = this.topicForm.value;
 
     this.topicService.createTopic(name, this.subjectId).subscribe(() => {
-      this.router.navigate([`/subjects/${this.subjectId}/topics`]);
+      this.router.navigate([`/teacher/subjects/${this.subjectId}/topics`]);
     });
   }
 
