@@ -1,0 +1,53 @@
+<ng-container *ngIf="subject$ | async as subject">
+
+    <div class="wrapper">
+        <nav>
+            <div id="heading-nav">
+                <h2 id="heading"> Start session for {{subject.name | uppercase }} </h2>
+            </div>
+        </nav>
+
+        <div class="flex-container">
+
+            <div class="flex-item left">
+                <h2>Students to add</h2>
+
+
+                <form *ngIf="students.controls.length; else empty;">
+                    <div id="student-flex-container">
+                        <div *ngFor="let student of students.controls; index as i" class="student-flex-item">
+                            <div>
+                                <input type="checkbox" [(ngModel)]="students.controls[i].value.isChecked"
+                                    [ngModelOptions]="{standalone: true}">
+                                <div>
+                                    <p>{{student.value.email}}@outlook.com</p>
+                                    <p>{{student.value.facultyNumber}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <ng-template #empty>
+                    <p id="empty"><i>This subject doesn't have any students yet.</i></p>
+                </ng-template>
+
+            </div>
+
+            <div class="flex-item right">
+                <h2>Start session</h2>
+                <input type="text" placeholder="Session name" class="blue-input">
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Choose a date</mat-label>
+                    <input matInput [matDatepicker]="picker" #datePicker>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+
+                <button class="hover blue-button" (click)="startSession()">Start</button>
+            </div>
+
+        </div>
+    </div>
+</ng-container>

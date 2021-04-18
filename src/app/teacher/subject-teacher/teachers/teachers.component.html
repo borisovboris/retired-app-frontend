@@ -3,16 +3,17 @@
     <div class="wrapper">
         <nav>
             <div id="heading-nav">
-                <h2 id="heading"> {{ subject.name | uppercase }} - Teachers </h2>
+                <h2 id="heading"> {{ subject.name | uppercase }}</h2>
             </div>
 
             <div id="button-nav">
-                <button id="teachers" class="hover blue-button" routerLink="add-teacher">Add teacher</button>
+                <button id="teachers" class="hover blue-button" routerLink="add">Add teacher</button>
             </div>
         </nav>
 
         <main>
-
+            <h2>Teachers</h2>
+            
             <table id="teacher-table">
                 <tr>
                     <th>Username</th>

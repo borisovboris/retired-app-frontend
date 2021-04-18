@@ -1,0 +1,33 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+import { SessionRoutingModule } from './session-routing.module';
+import { SessionsComponent } from './sessions/sessions.component';
+import { SessionDetailsComponent } from './session-details/session-details.component';
+import { AddSessionComponent } from './add-session/add-session.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+
+
+@NgModule({
+  declarations: [
+    SessionsComponent, 
+    SessionDetailsComponent, 
+    AddSessionComponent
+  ],
+  imports: [
+    CommonModule,
+    SessionRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatFormFieldModule,
+    MatInputModule
+  ]
+})
+export class SessionModule { }

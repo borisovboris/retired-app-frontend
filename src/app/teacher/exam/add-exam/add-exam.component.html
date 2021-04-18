@@ -5,7 +5,7 @@
             <form [formGroup]="examForm" (ngSubmit)="submit()">
                 <h1>Create exam</h1>
                 <div id="inputs">
-                    <input name="name" formControlName="name" type="text" placeholder="Name"><br>
+                    <input name="name" formControlName="name" type="text" placeholder="Name" class="blue-input">
                     <div *ngIf="f.name.invalid && f.name.touched">
                         <div *ngIf="f.name.errors?.required">exam name is required</div>
                     </div>

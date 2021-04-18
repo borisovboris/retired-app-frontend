@@ -5,7 +5,7 @@ import { TeachersComponent } from './teachers/teachers.component';
 
 const routes: Routes = [
   { path: '', children: [
-    { path: 'add-teacher', component: AddTeacherComponent },
+    { path: 'add', component: AddTeacherComponent },
     { path: '', component: TeachersComponent, pathMatch: 'full' },
   ]}
 ];

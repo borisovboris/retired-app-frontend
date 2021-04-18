@@ -98,7 +98,7 @@ i, i:hover, i:focus, i:active {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 } 
 
-#inputs input {
+.blue-input {
     width: 100%;
     margin: 10px 0;
     padding: 7px 0;
@@ -150,6 +150,16 @@ main {
     padding-bottom: 3rem;
 }
 
+/* .main-page {
+    padding-left: 6rem;
+    padding-right: 6rem;
+    padding-top: 6rem;
+    padding-bottom: 3rem;
+} */
 
 
 
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

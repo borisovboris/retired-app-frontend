@@ -1,0 +1,38 @@
+<ng-container *ngIf="subject$ | async as subject">
+
+    <div class="wrapper">
+        <nav>
+            <div id="heading-nav">
+                <h2 id="heading"> {{ subject.name | uppercase }}</h2>
+            </div>
+
+            <div id="button-nav">
+                <button id="teachers" class="hover blue-button" routerLink="add">Add session</button>
+            </div>
+        </nav>
+
+        <main>
+            <h2>Sessions</h2>
+            
+            <table id="teacher-table">
+                <tr>
+                    <th>Session name</th>
+                    <th>Creator</th>
+                    <th>Date</th>
+                </tr>
+                <ng-container *ngIf="(sessions$ | async)?.length; else empty">
+                    <tr *ngFor="let session of sessions$ | async">
+                        <td>{{session.name}}</td>
+                        <td>{{session.creatorId}}</td>
+                        <td>{{session.startTime}}</td>
+                    </tr>
+                </ng-container>
+            </table>
+
+            <ng-template #empty>
+                <p>This subject doesn't have any sessions yet.</p>
+            </ng-template>
+
+        </main>
+    </div>
+</ng-container>

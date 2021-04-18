@@ -6,7 +6,7 @@
             <div id="inputs">
 
                 <div [hidden]="selectedTeacher">
-                    <input placeholder="Search by username or email" #input>
+                    <input placeholder="Search by username or email" #input class="blue-input">
 
                     <ul id="teachers-list">
                         <ng-container *ngFor="let teacher of teachers$ | async">

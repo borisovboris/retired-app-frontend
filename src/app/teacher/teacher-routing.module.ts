@@ -10,6 +10,7 @@ const routes: Routes = [{
     { path: ':id/topics', loadChildren: () => import('./topic/topic.module').then((m) => m.TopicModule) },
     { path: ':id/exams', loadChildren: () => import('./exam/exam.module').then((m) => m.ExamModule) },
     { path: ':id/students', loadChildren: () => import('./subject-student/subject-student.module').then((m) => m.SubjectStudentModule) },
+    { path: ':id/sessions', loadChildren: () => import('./session/session.module').then((m) => m.SessionModule) },
     { path: 'add', component: AddSubjectComponent },
     { path: ':id', component: SubjectDetailsComponent },
     { path: '', component: SubjectsComponent, pathMatch: 'full' }

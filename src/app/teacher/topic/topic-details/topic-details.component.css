@@ -35,7 +35,7 @@ nav {
 .flex-item {
     width: 50%;
     height: 100vh;
-    padding-top: 8rem;
+    padding-top: 6rem;
     padding-left: 3rem;
     padding-right: 3rem;
     /* -2rem because theres a margin of 1 rem on each side of every flex item*/
