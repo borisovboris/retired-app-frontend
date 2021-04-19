@@ -33,7 +33,6 @@ nav {
 }
 
 .flex-item {
-    width: 50%;
     height: 100vh;
     padding-top: 6rem;
     padding-left: 3rem;
@@ -42,10 +41,12 @@ nav {
 }
 
 .flex-item.left {
+    width: 70%;
     background-color: #E8E8E8;
 }
 
 .flex-item.right {
+    width: 30%;
     background-color: #F5F5F5;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
     position: fixed;
@@ -64,19 +65,39 @@ nav {
 
 .student-flex-item {
     margin: 5px;
-    display: inline-block;
+    display: relative; 
     background-color: white;
     border-radius: 20px;
-    padding-top: 0.3rem;
-    padding-bottom: 0.3rem;
     text-align: center;
-    width: 50%;
+    width: 25%;
     overflow: hidden;
+}
+
+.student-flex-item p {
+    margin: 0px;
+}
+
+.student-flex-item .student-info {
+    display: inline-block;
 }
 
 .blue-input {
     display: block;
     width: 80%;
+}
+
+.input-group {
+    margin: 1.2rem 0rem;
+}
+
+.input-group *{
+    margin: 0;
+}
+
+#session-start-button {
+    position: absolute;
+    bottom: 2rem;
+    left: 3rem;
 }
 
 

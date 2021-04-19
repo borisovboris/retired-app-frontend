@@ -44,5 +44,9 @@ export class SubjectService {
   getSubjectStudents(subjectId: any) {
     return this.http.get(`${this.baseUrl}subjects/${subjectId}/students`);
   }
+
+  getSubjectExams(subjectId: any) {
+    return this.http.get(`${this.baseUrl}subjects/${subjectId}/exams`);
+  }
   
 }
