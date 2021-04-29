@@ -40,7 +40,7 @@
 
                     <div class="input-group">
                         <h3>Pick an exam <i>(from this subject)</i></h3>
-                        <select formControlName="examId">
+                        <select formControlName="examId" id="exam-select">
                             <option *ngFor="let exam of exams$ | async" value="{{exam.id}}">{{exam.name}}</option>
                         </select>
                     </div>
@@ -54,16 +54,16 @@
 
                     <div class="input-group">
                         <h3>Start time</h3>
-                        <input [ngxMatTimepicker]="startTime" class="blue-input" placeholder="Start time"
-                            formControlName="startTime">
-                        <ngx-mat-timepicker #startTime></ngx-mat-timepicker>
+                        <input [ngxMatTimepicker]="start" [format]="24" class="blue-input" placeholder="Start time"
+                         formControlName="start">
+                        <ngx-mat-timepicker #start></ngx-mat-timepicker>
                     </div>
 
                     <div class="input-group">
                         <h3>End time</h3>
-                        <input [ngxMatTimepicker]="endTime" class="blue-input" placeholder="End time"
-                            formControlName="endTime">
-                        <ngx-mat-timepicker #endTime></ngx-mat-timepicker>
+                        <input [ngxMatTimepicker]="end" [format]="24" class="blue-input" placeholder="End time"
+                            formControlName="end">
+                        <ngx-mat-timepicker #end></ngx-mat-timepicker>
                     </div>
 
                     <button class="hover blue-button" (click)="startSession()" id="session-start-button">Start</button>

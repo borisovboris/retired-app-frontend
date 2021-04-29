@@ -39,12 +39,12 @@ export class TopicDetailsComponent implements OnInit {
   }
   
 
-  getQuestionAnswers(questionId: number, title: string) {
-    this.questionService.getQuestionAnswers(questionId).subscribe((answers) => {
+  getQuestionChoices(questionId: number, title: string) {
+    this.questionService.getQuestionChoices(questionId).subscribe((choices) => {
       this.showQuestionDetails = true;
       this.selectedQuestion = {
         title,
-        answers
+        choices
       }
     });
   }

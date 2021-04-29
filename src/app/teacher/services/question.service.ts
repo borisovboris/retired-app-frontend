@@ -16,11 +16,12 @@ export class QuestionService {
 
   createQuestion(question: any) {
     //topicId included in question object
+    console.log(question);
     return this.http.post(`${this.baseUrl}questions`, question);
   }
 
-  getQuestionAnswers(questionId: number) {
-    return this.http.get(`${this.baseUrl}questions/answers/${questionId}`);
+  getQuestionChoices(questionId: number) {
+    return this.http.get(`${this.baseUrl}questions/${questionId}/choices`);
   }
 
 }

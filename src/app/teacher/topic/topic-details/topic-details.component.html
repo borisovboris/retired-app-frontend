@@ -19,8 +19,8 @@
                         <th>Type</th>
                     </tr>
                     <ng-container *ngIf="(questions$ | async)?.length; else empty">
-                        <tr *ngFor="let question of questions$ | async" (click)="getQuestionAnswers(question.id, question.questionTitle)">
-                            <td>{{question.questionTitle}}</td>
+                        <tr *ngFor="let question of questions$ | async" (click)="getQuestionChoices(question.id, question.title)">
+                            <td>{{question.title}}</td>
                             <td>{{question.type | uppercase}}</td>
                         </tr>
                     </ng-container>

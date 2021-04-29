@@ -25,7 +25,6 @@ export class ExamService {
   }
 
   addQuestionToExam(examId: any, questionId: string) {
-    console.log(examId, questionId);
     return this.http.post<any>(`${this.baseUrl}exams/add-question`, { examId, questionId });
   }
 

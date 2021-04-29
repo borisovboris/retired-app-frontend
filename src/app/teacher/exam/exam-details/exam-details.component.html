@@ -18,9 +18,9 @@
                 <button (click)="selectTopic(select.value)" class="blue-button">Select</button>
 
                 <ng-container *ngIf="(questions$ | async)?.length!=0; else empty">
-                    <ul class="list">
+                    <ul class="question-list">
                         <li *ngFor="let question of questions$ | async">
-                            <p>{{question.questionTitle}} ({{question.id}})</p>
+                            <p>{{question.title}} ({{question.id}})</p>
                             <button (click)="addQuestion(question.id)" class="blue-button">Add</button>
                         </li>
                     </ul>
@@ -35,8 +35,8 @@
                 <h3 class="subheading">Exam questions</h3>
                 <ul class="list">
                     <li *ngFor="let examQuestion of examQuestions$ | async">
-                        <p>{{examQuestion.questionTitle}} - {{examQuestion.type}}<p>
-                        <p *ngFor="let answer of examQuestion.answers">{{answer.text}}</p>
+                        <p>{{examQuestion.title}} - {{examQuestion.type}}<p>
+                        <p *ngFor="let choice of examQuestion.choices">{{choice.text}}</p>
                         <button (click)="removeQuestion(examQuestion.id)" class="remove-btn">Remove</button>
                     </li>
                 </ul>

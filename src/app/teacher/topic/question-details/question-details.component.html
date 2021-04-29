@@ -1,9 +1,9 @@
 <i class="far fa-times-circle hover" (click)="closeQuestionDetails()"></i>
 <h2>Question title: {{question.title}}</h2>
 
-<ng-container *ngIf="question.answers.length; else openQuestion">
-    <h2>Answers: </h2>
-    <p *ngFor="let answer of question.answers">{{answer.text}}</p>
+<ng-container *ngIf="question.choices.length; else openQuestion">
+    <h2>Choices: </h2>
+    <p *ngFor="let choice of question.choices">{{choice.text}}</p>
 </ng-container>
 
 <ng-template #openQuestion>

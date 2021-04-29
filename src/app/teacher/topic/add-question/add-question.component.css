@@ -1,7 +1,3 @@
-#question-title {
-    width: 80%;
-}
-
 #add-question-title {
     margin-bottom: 2rem;
 }
@@ -17,34 +13,28 @@
     left: 3rem;
 }
 
-#add-answer {
+#add-choice {
     display: block;
     margin-bottom: 1rem;
 }
 
-#answers-list {
+#choices-list {
     margin: 1rem 0rem;
 }
 
-.answer {
+.choice {
     width: 100%;
     margin: 1rem 0rem;
 }
 
 
-.answer-text {
+.choice {
     width: 70%;
     margin: 0 1rem;
 }
 
-.answer-error {
+.choice-error {
     margin-left: 28px;
-}
-
-input {
-    padding: 7px 0;
-    background-color: inherit;
-    border-bottom: 1px var(--sherpa-blue) solid;
 }
 
 .remove-btn {

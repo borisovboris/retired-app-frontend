@@ -27,7 +27,7 @@ export class AddQuestionComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  createAnswer() {
+  createChoice() {
     return this.fb.group({
       text: ['', [Validators.required]],
       isCorrect: [false]
@@ -36,9 +36,10 @@ export class AddQuestionComponent implements OnInit {
 
   createForm() {
     return this.fb.group({
-      questionTitle: ['', [Validators.required, Validators.minLength(5)]],
+      title: ['', [Validators.required, Validators.minLength(5)]],
       type: ['', Validators.required],
-      answers: this.fb.array([this.createAnswer()])
+      maxPoints: ['', [Validators.required]],
+      choices: this.fb.array([this.createChoice()])
     });
   }
 
@@ -46,36 +47,36 @@ export class AddQuestionComponent implements OnInit {
     return this.form.controls;
   }
   
-  get answersControls() {
-    return (this.form.get("answers") as FormArray).controls;
+  get choicesControls() {
+    return (this.form.get("choices") as FormArray).controls;
   }
 
-  answers() {
-    return (this.form.get("answers") as FormArray)
+  choices() {
+    return (this.form.get("choices") as FormArray)
   }
 
-  addAnswer() {
-    if(this.answers().length + 1 > 5) {
+  addChoice() {
+    if(this.choices().length + 1 > 5) {
       return;
     }
-    this.answers().push(this.createAnswer());
+    this.choices().push(this.createChoice());
   }
 
-  removeAnswer(index: number) {
-    this.answers().removeAt(index);
+  removeChoice(index: number) {
+    this.choices().removeAt(index);
   }
   
   submitQuestion() {
     /*
-    1. A closed question must have at least 2 answers.
-    2. A closed question must have at least 1 correct answer.
+    1. A closed question must have at least 2 choices.
+    2. A closed question must have at least 1 correct choice.
     */
     this.formSubmitted = true;
     const formValue = this.form.value;
 
     if(this.form.invalid) {
       
-      if(!(formValue.type === "open" && formValue.questionTitle.length >= 5)) {
+      if(!(formValue.type === "open" && formValue.title.length >= 5)) {
         return;
       }
     }
@@ -83,22 +84,20 @@ export class AddQuestionComponent implements OnInit {
     const questionType = formValue.type;
 
     if(questionType === 'open') {
+      const { title, type, maxPoints } = formValue;
+      // because it is an open question, it has only one open choice
+      this.question = { title, type, topicId: this.topicId, maxPoints }
 
-      const { questionTitle, type } = formValue;
-      this.question = { questionTitle, topicId: this.topicId, type}
-      
-
-    } else if (questionType === 'closed') {
-     
-      const { questionTitle, type, answers } = formValue;
-      const atLeastOneRightAnswer = answers.some((answer: any) => answer.isCorrect === true);
-      if(answers.length < 2) {
-        console.log(answers.length);
+    } else if (questionType === 'closed') {   
+      const { title, type, choices, maxPoints } = formValue;
+      const atLeastOneRightChoice = choices.some((choice: any) => choice.isCorrect === true);
+      if(choices.length < 2) {
+        console.log(choices.length);
         return;
-      } else if (!atLeastOneRightAnswer) {
+      } else if (!atLeastOneRightChoice) {
         return;
       }
-      this.question = { questionTitle, type, topicId: this.topicId, answers};
+      this.question = { title, type, topicId: this.topicId, choices, maxPoints};
 
     }
 
