@@ -1,1 +1,22 @@
 <p>session-details works!</p>
+<ng-container *ngIf="session$ | async as session">
+    {{session | json}}
+    <p>Session name: {{session.name}}</p>
+    <p>Start time: {{session.startTime}}</p>
+    <p>End time: {{session.endTime}}</p>
+
+    <h3>Student exams</h3>
+    <table>
+        <tr>
+            <th>Student</th>
+            <th>Faculty number</th>
+            <th>Results</th>
+        </tr>
+        <tr *ngFor="let studentExam of session.studentExams" routerLink="student-exams/{{studentExam.id}}">
+            <td>{{studentExam.student.username}}</td>
+            <td>{{studentExam.student.facultyNumber}}</td>
+            <td>{{studentExam.totalEarnedPoints}}/{{studentExam.totalMaxPoints}}</td>
+        </tr>
+    </table>
+    
+</ng-container>

@@ -15,4 +15,8 @@ export class SessionService {
     console.log(data);
     return this.http.post<any>(`${this.baseUrl}sessions/add`, data);
   }
+
+  getSession(sessionId: any) {
+   return this.http.get<any>(`${this.baseUrl}sessions/${sessionId}`);
+  }
 }

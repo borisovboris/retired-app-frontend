@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
+import { SessionService } from '../../services/session.service';
 import { SubjectService } from '../../services/subject.service';
 
 @Component({
@@ -16,12 +17,13 @@ export class SessionsComponent implements OnInit {
   constructor
   (
     private readonly route: ActivatedRoute,
-    private readonly subjectService: SubjectService,
+    private readonly subjectService: SubjectService
   ) { }
 
   ngOnInit(): void {
     this.subjectId = this.route.snapshot.paramMap.get('id');
     this.subject$ = this.subjectService.getSubject(this.subjectId);
+    this.sessions$ = this.subjectService.getSubjectSessions(this.subjectId);
   }
 
 }

@@ -1,0 +1,24 @@
+<p>student-exam-details works!</p>
+
+<ng-container *ngIf="(studentExam$ | async) as studentExam">
+    {{ studentExam | json }}
+
+    <p>Student: {{studentExam.student.username}}</p>
+    <p>Faculty number: {{studentExam.student.facultyNumber}}</p>
+
+    <div *ngFor="let question of studentExam.studentQuestions">
+        <h1>{{question.title}}</h1>
+
+        <div *ngIf="question.type === 'closed'">
+          <p *ngFor="let choice of question.studentChoices">
+              {{choice.text}}
+          </p>
+        </div>
+
+        <div *ngIf="question.type === 'open'">
+            <textarea placeholder="Answer here"></textarea>
+        </div>
+
+        <p>{{question.earnedPoints}} / {{question.maxPoints}}</p>
+    </div>
+</ng-container>

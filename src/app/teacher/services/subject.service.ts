@@ -49,4 +49,7 @@ export class SubjectService {
     return this.http.get(`${this.baseUrl}subjects/${subjectId}/exams`);
   }
   
+  getSubjectSessions(subjectId: any) {
+    return this.http.get(`${this.baseUrl}subjects/${subjectId}/sessions`);
+  }
 }
