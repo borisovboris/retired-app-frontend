@@ -1,0 +1,20 @@
+<p>subject-details works!</p>
+
+<table>
+    <tr>
+        <th>Subject</th>
+        <th>Teacher</th>
+        <th>Session name</th>
+        <th>Start</th>
+        <th>Result</th>
+        <th>Status</th>
+    </tr>
+    <tr *ngFor="let studentExam of studentExams$ | async" routerLink="student-exam/{{studentExam.id}}">
+        <td>{{studentExam.subjectName}}</td>
+        <td>{{studentExam.teacher}}</td>
+        <td>{{studentExam.sessionName}}</td>
+        <td>{{studentExam.startTime}}</td>
+        <td>{{studentExam.totalEarnedPoints}}/{{studentExam.totalMaxPoints}}</td>
+        <td>{{studentExam.status | titlecase }}</td>
+    </tr>
+</table>

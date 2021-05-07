@@ -36,4 +36,8 @@ export class StudentService {
   removeStudentFromSubject(studentId: any, subjectId: any) {
     return this.http.delete<any>(`${this.baseUrl}students/${studentId}/remove-student-from-subject/${subjectId}`);
   }
+
+  getSubjectExamsOfStudent(subjectId: any) {
+    return this.http.get<any>(`${this.baseUrl}students/subject/${subjectId}/exams`);
+  }
 }

@@ -3,10 +3,11 @@ import { CommonModule } from '@angular/common';
 import { StudentRoutingModule } from './student-routing.module';
 import { SubjectsComponent } from './subjects/subjects.component';
 import { SharedModule } from '../shared/shared.module';
-import { RouterModule } from '@angular/router';
+import { SubjectDetailsComponent } from './subject-details/subject-details.component';
+import { StudentExamDetailsComponent } from './student-exam-details/student-exam-details.component';
 
 @NgModule({
-  declarations: [SubjectsComponent],
+  declarations: [SubjectsComponent, SubjectDetailsComponent, StudentExamDetailsComponent],
   imports: [
     CommonModule,
     StudentRoutingModule,

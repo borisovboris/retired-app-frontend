@@ -1,6 +1,6 @@
 <p>student-exam-details works!</p>
 
-<ng-container *ngIf="(studentExam$ | async) as studentExam">
+<ng-container *ngIf="studentExam">
     {{ studentExam | json }}
 
     <p>Student: {{studentExam.student.username}}</p>
@@ -13,12 +13,16 @@
           <p *ngFor="let choice of question.studentChoices">
               {{choice.text}}
           </p>
+
+          <p>{{question.earnedPoints}} / {{question.maxPoints}}</p>
         </div>
 
         <div *ngIf="question.type === 'open'">
             <textarea placeholder="Answer here"></textarea>
+            <input placeholder="{{question.earnedPoints}}" (keyup)="assessOpenQuestion($event, question.id)" type="number" min="0" max="{{question.maxPoints}}">
+            <p>{{question.maxPoints}}</p>
         </div>
 
-        <p>{{question.earnedPoints}} / {{question.maxPoints}}</p>
+        
     </div>
 </ng-container>

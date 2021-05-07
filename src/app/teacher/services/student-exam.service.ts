@@ -13,7 +13,16 @@ export class StudentExamService {
     private readonly http: HttpClient
   ) {}
 
-  getStudentExam(studentExamId: any) {
+  getStudentExamTeacher(studentExamId: any) {
     return this.http.get<any>(`${this.baseUrl}student-exams/${studentExamId}/teacher`);
   }
+
+  getStudentExamStudent(studentExamId: any) {
+    return this.http.get<any>(`${this.baseUrl}student-exams/${studentExamId}/student`);
+  }
+
+  getSubjectExamsOfStudent(subjectId: any) {
+    return this.http.get<any>(`${this.baseUrl}student-exams/for-subject/${subjectId}`);
+  }
+
 }
